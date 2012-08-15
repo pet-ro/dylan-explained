@@ -6,7 +6,9 @@ Dylan Explained
 [pet-ro]:     https://github.com/pet-ro               "pet-ro @ github"
 
 [github md]: http://github.github.com/github-flavored-markdown/ "GitHub flavored markdown"
+
 [Success Git branching model]: 
+
 [PerlGit]:     http://docs.activestate.com/activeperl/5.14/lib/pods/perlgit.html "PerlGit - Detailed information about Git and the Perl Repository"
 [PerlGit: Topic branches]: http://docs.activestate.com/activeperl/5.14/lib/pods/perlgit.html#topic_branches_and_rewriting_history "Topic branches and rewriting history]
 
@@ -24,8 +26,10 @@ Goals of the project Dylan Explained
   <dd>Writing a <em>Ddylan Language Glossary</em> is the 
       <em>core goal</em> of 
       <em>Dylan-Explained</em>. 
-      Basically this should help to write 
+ 
+      <p>Basically this should help to write 
       DEPs, <em>D</em>ylan <em>E</em>nhancement <em>P</em>roposals.
+      </p>
   </dd>
 </dl>
 
@@ -60,20 +64,20 @@ Possible Extensions in mind are:
     are nessary the several developers can work as team.
    
 
- *  A introduction to Dylan Programming</dt>
+ *  **A introduction to Dylan Programming**
    
     The idea is to use the granularity to rearrange the
     terms of the different glossaries in a way 
     that it becomes a readable introduction to 
     new dylan community members.
-   </dd>
+   
 
-[pet-ro][] setuop this project description on 2012-Aug-15. 
+[pet-ro][] setup this project description on 2012-Aug-15. 
 
 Appendix
  *  Appendix A: Best Practice: the branches of this git project
  *  Appendix B: A Git workflow example
- *  Appendix C:
+ *  Appendix C: How this project was set up with Git
  
 
 
