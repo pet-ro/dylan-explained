@@ -119,14 +119,14 @@ Users of git 1.7 or newer can do it in a more obvious manner:
 1. Create your personal proofreading branch.
    It is personalized by prefix your username.
 
-  $ my-proofreading="$yourname/proofreading"  
-  $ git checkout -b  $branch  origin/proofreading 
+  $ my-proofreading="$my-name/proofreading"  
+  $ git checkout -b  $my-proofreading origin/proofreading 
   $ git push origin -u $my-proofreading 
 
 2. Create your personal drafting branch 
 
-  $ my-drafting="$yourname/drafting"  
-  $ git checkout -b  $branch  origin/$my-proofreading 
+  $ my-drafting="$my-name/drafting"  
+  $ git checkout -b  $my-drafting  origin/$my-proofreading 
   $ git push origin -u $my-drafting 
 
 
