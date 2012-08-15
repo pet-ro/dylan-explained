@@ -7,7 +7,7 @@ Dylan Explained
 
 [github md]: http://github.github.com/github-flavored-markdown/ "GitHub flavored markdown"
 
-[Success Git branching model]: 
+[Success Git branching model]: http://nvie.com/posts/a-successful-git-branching-model/ "A successful Git branching model"
 
 [PerlGit]:     http://docs.activestate.com/activeperl/5.14/lib/pods/perlgit.html "PerlGit - Detailed information about Git and the Perl Repository"
 [PerlGit: Topic branches]: http://docs.activestate.com/activeperl/5.14/lib/pods/perlgit.html#topic_branches_and_rewriting_history "Topic branches and rewriting history]
