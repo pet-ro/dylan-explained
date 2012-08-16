@@ -6,9 +6,11 @@ Dylan Explained
 [pet-ro]:     https://github.com/pet-ro               "pet-ro @ github"
 
 [github md]: http://github.github.com/github-flavored-markdown/ "GitHub flavored markdown"
-[Success Git branching model]: 
+
+[Success Git branching model]: http://nvie.com/posts/a-successful-git-branching-model/ "A successful Git branching model"
+
 [PerlGit]:     http://docs.activestate.com/activeperl/5.14/lib/pods/perlgit.html "PerlGit - Detailed information about Git and the Perl Repository"
-[PerlGit: Topic branches]: http://docs.activestate.com/activeperl/5.14/lib/pods/perlgit.html#topic_branches_and_rewriting_history "Topic branches and rewriting history]
+[PerlGit - Topic branches]: http://docs.activestate.com/activeperl/5.14/lib/pods/perlgit.html#topic_branches_and_rewriting_history "Topic branches and rewriting history"
 
 Dylan Explained is a documentation project related to the project
 [opendylan][] at [dylan-lang][].
@@ -24,8 +26,10 @@ Goals of the project Dylan Explained
   <dd>Writing a <em>Ddylan Language Glossary</em> is the 
       <em>core goal</em> of 
       <em>Dylan-Explained</em>. 
-      Basically this should help to write 
+ 
+      <p>Basically this should help to write 
       DEPs, <em>D</em>ylan <em>E</em>nhancement <em>P</em>roposals.
+      </p>
   </dd>
 </dl>
 
@@ -60,27 +64,52 @@ Possible Extensions in mind are:
     are nessary the several developers can work as team.
    
 
- *  A introduction to Dylan Programming</dt>
+ *  **A introduction to Dylan Programming**
    
     The idea is to use the granularity to rearrange the
     terms of the different glossaries in a way 
     that it becomes a readable introduction to 
     new dylan community members.
-   </dd>
+   
 
-[pet-ro][] setuop this project description on 2012-Aug-15. 
+[pet-ro][] setup this project description on 2012-Aug-15. 
 
-Appendix
- *  Appendix A: Best Practice: the branches of this git project
- *  Appendix B: A Git workflow example
- *  Appendix C:
+
+Sphinx-Appendix
+ * Sphinx Appendix
+
+Git-Appendix
+ *  Git Appendix A: Best Practice: the branches of this git project
+ *  Git Appendix B: A Git workflow example
+ *  Git Appendix C: How this project was set up with Git
  
 
+Sphinx-Appendix A: Why and how
+------------------------------
+
+Sphinx renders ReST-files into, for example, html.
+
+1) Add sphinx-extension to your git repo:
+
+   git submodule init
+   git submodule add git://github.com/dylan-lang/sphinx-extensions.git
+
+2) If error pops up related to dylandomain.dylandomain:
+
+   Check in source/conf.py section
+   
+   If extensions (or modules to document with autodoc) are in another 
+   directory, add these directories to sys.path here. 
+   If the directory is relative to the documentation root, 
+   use os.path.abspath to make it absolute, like shown here.
+  
+   sys.path.insert(0, os.path.abspath('../sphinx-extensions'))
+   sys.path.insert(0, os.path.abspath('../sphinx-extensions/feed'))
 
 
 
-Appendix A: Best Practice: The branches of this git project
------------------------------------------------------------
+Git Appendix A: Best Practice: The branches of this git project
+---------------------------------------------------------------
 
 With in the [dylan-lang][]
 it is recommended to use the [Successful Git branching model][] for
@@ -127,37 +156,43 @@ Especially source which is not stable enough for proofreading is located here.
 
 We consider `origin/$yourname/proofreading` to be the branch
 
-Appendix B: A Git workflow example 
-----------------------------------
+Git Appendix B: A Git workflow example 
+---------------------------------------
 
 Users of git 1.7 or newer can do it in a more obvious manner:
 
-1. Create your personal proofreading branch.
+
+1. Create your personal drafting branch 
+
+  $ my-drafting="$my-name/drafting"  
+  $ git checkout -b  $my-drafting  origin/$my-proofreading 
+  $ git push origin -u $my-drafting 
+
+2. Create your personal proofreading branch.
    It is personalized by prefix your username.
 
   $ my-proofreading="$my-name/proofreading"  
   $ git checkout -b  $my-proofreading origin/proofreading 
   $ git push origin -u $my-proofreading 
 
-2. Create your personal drafting branch 
 
-  $ my-drafting="$my-name/drafting"  
-  $ git checkout -b  $my-drafting  origin/$my-proofreading 
-  $ git push origin -u $my-drafting 
 
 
 This workflow is inspired by the section [PerlGit: Topic branches] of [PerlGit].
 
 
-Appendix B: How this project was set up with Git
+Git Appendix C: Some Git commands  
 -------------------------------------------------
+
+
+
 
 To push the master branch to origin/master
  
  * git push origin -u master
 
 
-To push the proofreading branch to origin/pofreading
+To push the local proofreading branch to origin/pofreading
 
  * git push origin -u proofreading:pofreading
 
