@@ -73,7 +73,7 @@
 .. _chapter-dylan-language-glossary:
 
 *********************************
-Dylan Language Glossary (Testing)
+Dylan Language Glossary          
 *********************************
 
 Note:
@@ -93,36 +93,21 @@ Note:
  - All other links, which do not contain a '@'  are internal 
    to this *Dylan Language Glossary*.
 
+
 .. list of external links
 
 .. _History of Dylan Programming Language@wikipedia: http://en.wikipedia.org/wiki/History_of_the_Dylan_programming_language 
 
-
-.. include:: ./test.txt
+.. include:: ./terms/about-dylan.txt
 .. include:: ./terms/binding.txt
 .. include:: ./terms/binding-sharing.txt
 .. include:: ./terms/class.txt
 .. include:: ./terms/client-server-interaction-of-modules.txt
 .. include:: ./terms/definition.txt
-.. include:: ./terms/hierarchical-modularity.txt
-.. include:: ./terms/interface-role-of-a-module.txt
-.. include:: ./terms/library.txt
-.. include:: ./terms/module.txt
-.. include:: ./terms/modularization.txt
-.. include:: ./terms/name.txt
-.. include:: ./terms/name-only-sharing.txt
-.. include:: ./terms/name-sharing-variants.txt
-.. include:: ./terms/namespace.txt
-.. include:: ./terms/roles-of-modules.txt
-.. include:: ./terms/sealing.txt
 
 
 
-Testing the external links
---------------------------
 
 
-Link to `History of Dylan Programming Language@wikipedia`_ 
 
-Link to :drm:`Colophon@DRM <Colophon>`
 

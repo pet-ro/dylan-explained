@@ -14,7 +14,7 @@ binding sharing
   :ref:`name sharing variants 
   <dylan-term-name-sharing-variants>` 
   which the dylan language provides.  
-  In *binding sharing* not only a name is shared, but also a
+  In *binding sharing* not only a *name* is shared, but also a
   *value* that is bound to the *name*.
  
   A *binding sharing* is introduced by an :samp:`export` clause 

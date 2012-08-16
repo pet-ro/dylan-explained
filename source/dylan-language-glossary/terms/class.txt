@@ -62,7 +62,9 @@ class
     not centered around *classes* as it is 
     done in the current mainstream object-oriented languages. 
 
-  So the :ref:`object model
+.. _dylan-term-class(object-model):
+
+  The :ref:`object model
   <dylan-term-object-model>` 
   often feels strange to newcomer to the dylan language from the 
   current mainstream object-oriented languages (C#, Java).
@@ -70,17 +72,17 @@ class
   - To build up a namespace around a class: 
    
     - in the dylan language you will define a :ref:`module
-    <dylan-term-module>` 
-    and nest the class inside the module.
+      <dylan-term-module>`  
+      and nest the class inside the module.
   
   - To build up a :ref:`compilation unit
     <dylan-term-compilation-unit>` 
  
     - in the dylan language you will defines a :ref:`library
-    <dylan-term-library>`, which groups together your :ref:`modules
-    <dylan-term-module>`, which represent :ref:`namespaces
-    <dylan-term-namespaces>`
-    .
+      <dylan-term-library>`, which groups together your :ref:`modules
+      <dylan-term-module>`, which represent :ref:`namespaces
+      <dylan-term-namespaces>`
+      .
  
   - To initialise a class
    
@@ -91,12 +93,12 @@ class
 
   - To create an instance creation of a class
 
-    - in the dylan language you will use the :ref:`generic` 
+    - in the dylan language you will use the :ref:`generic 
       <dylan-term-generic>` 
       function :samp:`make`. 
 
 
-.. _dylan-term-slot:
+.. _dylan-term-class(slot):
   
   A *slot* of a class can either bind a *data* 
   or a *method*, as both a :ref:`first class objects

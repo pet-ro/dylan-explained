@@ -1,0 +1,54 @@
+.. About this file
+  - contains one (!) glossary entry in the ReSTructed format  
+  - the glossary entry will be fetched by a `include` 
+    directive of Sphinx.
+  write 0 whitespaces in front of the label
+  write 2 whitespaces infront of description.
+
+.. _dylan-term-about-dylan:
+
+About Dylan 
+-----------
+
+  The dylan language was designed in the early nineties. 
+  A huge group of skilled people were involved:
+  
+  - The :drm:`Colophon@DRM <Colophon>` lists all contributors to 
+    the dylan language design. 
+
+  The goal was:
+  
+  -  to design - with Lisp im mind - a new mainstream language.
+
+  Financial crisis of its main supporters kill the launching process 
+  of the Language. Its main supports were:
+ 
+  -  Apple and 
+  -  Harlequin 
+ 
+  Details are given in
+  
+  - `History of Dylan Programming Language@wikipedia`_.
+
+  We, the OpenDylan Community, feel 
+  
+  - the dylan language its design is still inspiring  
+   
+    - even after so many years. 
+
+  - the dylan compiler design by Harlequin is impressing
+
+    - even after so many years
+
+  We are looking for contributors with an interest in
+
+  - modern language features
+  - compiler design
+
+  A fast introduction to dylan language terms
+  provide this glossary. 
+  :ref:`About Dylan
+  <dylan-term-about-dylan>`
+  introduces the glossary.
+
+  

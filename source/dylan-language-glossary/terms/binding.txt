@@ -11,9 +11,12 @@ binding
 -------
 
   A binding is a simple construct and a core concept of the dylan language. 
-  It is simply an association of a 
+  
+  A *binding*  is simply an *association* of a 
   :ref:`name <dylan-term-name>` 
   with a value. 
+
+.. _dylan-term-binding(kind):
 
   A binding can either be 
 
@@ -23,19 +26,21 @@ binding
     - *mutable*,
     - variable or 
     - writable.
-  or 
   
-  - a binding can be of the opposite of mutable. 
-    Such a binding is called *immutable*. 
-    Sometimes also:
+  or a binding can be of the opposite of modifyable.
+
+  Such a binding is called 
+  - *immutable*.  Sometimes also:
    
     - constant or 
     - read-only. 
 
-  
-  Each binding is 
+ 
+.. _dylan-term-binding(sharing):
 
-  - owned by exactly one *serving module*, but 
+  Each binding 
+
+  - is owned by exactly one *serving module*, but 
   - it can be shared with other modules via 
     :ref:`client-server interaction of modules 
     <dylan-term-client-server-interaction-of-modules>`.
