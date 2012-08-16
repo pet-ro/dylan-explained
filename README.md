@@ -106,8 +106,12 @@ Sphinx renders ReST-files into, for example, html.
    sys.path.insert(0, os.path.abspath('../sphinx-extensions'))
    sys.path.insert(0, os.path.abspath('../sphinx-extensions/feed'))
 
+3) *make html*, after git clean -dxf
+   
+   make: *** keine Regel, um html zu erstellen
 
-
+  
+    
 Git Appendix A: Best Practice: The branches of this git project
 ---------------------------------------------------------------
 
