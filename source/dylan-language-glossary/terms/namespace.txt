@@ -1,0 +1,47 @@
+.. About this file
+  - contains one (!) glossary entry in the ReSTructed format  
+  - the glossary entry will be fetched by a `include` 
+    directive of Sphinx.
+  write 0 whitespaces in front of the label
+  write 2 whitespaces infront of description.
+
+.. _dylan-term-namespace:
+
+namespace
+---------
+
+  It is an established practice to group the :term:`names<name>`
+  and their :ref:`bindings 
+  <dylan-term-binding>` into *namespace*. 
+
+  In the dylan language a *namespace* is a 
+  :ref:`sealed <dylan-term-sealing>`
+  container of  :term:`names <dylan-term-name>`. 
+  A :samp:`define module` declares a new *namespace*. 
+
+  The dylan language provides a construct to group namespaces 
+  together in a :term:`sealed<sealing>` container. This language
+  construct is a :term:`library`.
+     
+  Names are shared between modules (namespaces). 
+  There are two :term:`name sharing variants`. 
+  A name is shared  with its binding to a value. 
+  This is called :term:`binding sharing`.
+  The other variant is :term:`name only sharing` which means that name is
+  *not* bind to a value.
+
+  One has to distinguish especially two cases:
+  a *share to an internal client module* and
+  a *share to an external client module*. 
+  Details are given in the description of the term 
+  :term:`name sharing`. 
+
+  The dylan language support :term:`hierarchical modularity` 
+  of modules. The recurring pattern that builds up the 
+  :term:`hierarchical modularity` is aggregation: 
+  A module aggregates names (and their bindings) into a namespace; 
+  a library aggregates namespaces to executable code units: exe or dll.
+
+
+  But note: This kind of :term:`hierarchical modularity` does *not* 
+  represent a hierarchy of namespaces(!!!).

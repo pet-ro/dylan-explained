@@ -1,0 +1,55 @@
+.. About this file
+  - contains one (!) glossary entry in the ReSTructed format  
+  - the glossary entry will be fetched by a `include` 
+    directive of Sphinx.
+  write 0 whitespaces in front of the label
+  write 2 whitespaces infront of description.
+
+.. _dylan-term-definition:
+
+definition
+----------
+  Definitions are a dylan language construct to create 
+  :ref:`bindings<dylan-term-binding>`. 
+ 
+  The dylan language provides several build-in definitions:
+ 
+  - :samp:`define constant`, 
+  - :samp:`define method`.
+  - :samp:`define class`,
+  - :samp:`define module`, and
+  - :samp:`define library`.
+  
+
+  The last two definitions (
+  :ref:`module
+  <dylan-term-module>`
+  , 
+  :ref:`library
+  <dylan-term-library>`
+  ) 
+  are the dylan language constructs to build up 
+  :ref:`hierarchical modularity
+  <dylan-term-hierarchical-modularity>`.
+  
+  A special definition is :samp:`define macro`, which allows to 
+  author a *domain specific language (DSL)*.
+
+  All the definitions  listed here so far 
+  are *constant* built-in definitions. Other definitions 
+  may be *variable* built-in definitions:
+  
+  - Variable built-in definitions are for example: 
+    
+    - :samp:`define variable` and
+    - :samp:`define generic method`.
+  
+    The last definition is essential for a mechanism called
+    :ref:`method dispatch
+    <dylan-term-method-dispatch>`
+    , 
+    which the dylan language provides. 
+ 
+  Details for each definition are given in the related entries 
+  in the `Dylan Reference Manaual (DRM)`. 
+ 

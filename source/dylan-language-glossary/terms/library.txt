@@ -1,0 +1,33 @@
+.. About this file
+  - contains one (!) glossary entry in the ReSTructed format  
+  - the glossary entry will be fetched by a `include` 
+    directive of Sphinx.
+  write 0 whitespaces in front of the label
+  write 2 whitespaces infront of description.
+ 
+.. _dylan-term-library:
+ 
+library
+-------
+  A :term:`library` is a :term:`sealed<sealing>` container of 
+  :term:`modules<module>`. Only exported modules of 
+  a :term:`library` can be shared with other libraries.  
+  A library in the dylan language represents not only aggregated 
+  :term:`modules<module>`, 
+  but also a  :term:`compilation unit` which gets transfered into executable
+  code (exe) or dynamically linkable code (dll). 
+  The name of library specifies the name of the :term:`compilation unit`.
+
+  A library groups namesspaces ( :term:`modules<module>` ) together. 
+ 
+  To create a library you create a new :term:`source record` with the 
+  specific header :samp:`Module dylan-user`. In this module you write a 
+  :samp:`define library` section to specifies the 
+  :term:`hierarchical modularity` of your programm.  
+  Libraries, together with modules, are the core language elements to build up 
+  the :term:`hierarchical modularity`. 
+
+  :samp:`define library` is a built-in :term:`definition` of the dylan language.  
+
+
+

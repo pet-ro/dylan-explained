@@ -1,0 +1,8 @@
+.. About this 
+  contains one (!) glosssary entry. The content
+  gets fetched by a `include` directive of Sphinx.
+  write 0 whitespace in front of the label
+  write 2 whitespaces infront of description.
+
+interactive code
+  **a to do**

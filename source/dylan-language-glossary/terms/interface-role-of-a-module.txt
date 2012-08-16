@@ -1,0 +1,81 @@
+.. About this file
+  - contains one (!) glossary entry in the ReSTructed format  
+  - the glossary entry will be fetched by a `include` 
+    directive of Sphinx.
+  write 0 whitespaces in front of the label
+  write 2 whitespaces infront of description.
+
+.. _dylan-term-interface-role-of-a-module:
+
+interface role of a module
+--------------------------
+
+  Characteristics of an *interface role* is 
+  :term:`name only sharing`. 
+
+  So these are elements of a :samp:`define module` unit 
+  are chacteristic for a :term:`name onyl sharing`. 
+  
+  (a) it contains one or more :samp:`create` clauses in its 
+  :samp:`define module`.
+ 
+  (b) it may contain one or more re-exports of names. 
+  *To re-export a name* one write a :samp:`use` clause 
+  which in its options import a name and directly exports it.
+  
+  To play an interface role a module must prodived names
+
+
+  As (a) states an *interface role* is introduced by a :samp:`create`
+  clauses. 
+
+  The :samp:`create` clause  causes the name to be reserved by its 
+  module's namespace, with the requisite that its definitions 
+  is provided by some other module in the *same* library.
+  (That it must be a module of the *same* library is easily 
+  understandable: a :term:`library` represent a :term:`compilation unit`.)
+  
+  A typical *interface role* contains in its :samp:`define module`
+  :samp: `create` clauses for names. Additionally an *interface module*
+  might share a name from  *other interface module*. In this case 
+  
+
+ of :term:`classes<class>` andor 
+  for names of :term:`generics`. Additionally it may contain a 
+  :samp:`use` clause, which in its options import a name and directly 
+  exports it. Such an :samp:`use` is the dylan language construct
+  to share a *interface element* from an other *interface module*.
+   
+  or names of *shared interfaces/protocols* 
+  with its own :samp:`create` clause of a :samp:`define module` unit. 
+
+  A **protocol** is an                     
+
+  A typical re-export statement as specified in (b) may look like this:
+  
+  :samp:`use a-serving-module, import: {a-relevant-name}, export: all;`
+
+  If a module's only role is that of an interface its called an 
+  **interface module**. An *interface module* is a *serving module*.
+  An interface module owns througt (a) or (b) names. For an interface
+  module it is characteristic that these names are not already bound
+  to values.
+ 
+
+  An **interface module** provides a name only  names via the :samp:`create` clause.
+
+  An **interface module** typically gets 
+  exported by its library  and so it becomes an **external interface**. 
+  An external library will use the **interface module** 
+  and one or more modules of the external library act as *clients* 
+  to the provided bindings. 
+  
+  A *shared protocol* is a list of names which an *interface module*
+  imports (uses) from an other module and which get reexported from
+  the *interface* module. 
+  In a :samp:`define module` definition of an **interface module** 
+  a :samp:`use` clause signals a *shared protocol*.
+  Via the option *import* of the :samp:`use`clause the names of the 
+  shared protocol are imported and via the option *export* these imported
+  name are reexported from the **interface module**.
+

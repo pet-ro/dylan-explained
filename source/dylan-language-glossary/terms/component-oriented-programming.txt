@@ -1,0 +1,23 @@
+ .. About this file
+  - contains one (!) glossary entry in the ReSTructed format  
+  - the glossary entry will be fetched by a `include` 
+    directive of Sphinx.
+  write 0 whitespaces in front of the label
+  write 2 whitespaces infront of description.
+
+component-oriented programming
+   Distributed extensibility is the essence of component-oriented
+   programming.  As an organizational paradigma, component-oriented 
+   programming is concerned with the composition and interaction of 
+   components and frameworks through interfaces, it is not concerned 
+   with their insides in any way. The computational paradigm at the core 
+   of a component-oriented programming language is therefore not
+   constrained, i.e. the core can be imperative, functional or 
+   logical. However, `Frohlich(2003)`_  
+   claims that it is necessary to use a language 
+   which allows static typing. In component-oriented programming
+   static typing ensures the safety of a composition.
+   The dylan language is compliant with this requirement of 
+   component-oriented programming. Its typing
+   can be defined to be dynamically or statically.
+.. _Frohlich(2003):  http://gaming.jhu.edu/~phf/pub/thesis-uci-2003.pdf 

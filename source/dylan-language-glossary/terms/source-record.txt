@@ -1,0 +1,26 @@
+.. About this file
+  - contains one (!) glossary entry in the ReSTructed format  
+  - the glossary entry will be fetched by a `include` 
+    directive of Sphinx.
+  write 0 whitespaces in front of the label
+  write 2 whitespaces infront of description.
+
+source record
+  As its name specifies it does record source code 
+  A source record can be either a file or, any other useful storage 
+  representation, for example, a database entry.
+       
+  The dylan language allow that several source records represent 
+  a :term:`library`. Related to the dylan reference manual 
+  how source code is associated with a library is controlled by 
+  the programming environment and is implementation-defined.
+     
+  The dylan implementation *OpenDylan* allows the following:
+  The source records of a library (compilation unit) is grouped into
+  a :samp:`define library` section which can not be fragmentated; while 
+  its :samp:`define module` sections can be fragementated over 
+  several source records. 
+     
+  Every possible :term:`definition` allowed in a :samp:`define module`
+  section is the smallest possible fragment of a module's source record.
+    

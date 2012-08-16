@@ -1,0 +1,31 @@
+.. About this file
+  - contains one (!) glossary entry in the ReSTructed format  
+  - the glossary entry will be fetched by a `include` 
+    directive of Sphinx.
+  write 0 whitespaces in front of the label
+  write 2 whitespaces infront of description.
+
+interface
+  Generally an interface is a way of writing down a functionality 
+  specification of a code fragement in such a way that a client
+  can use the functionality. So an interface provides information 
+  relevant on how to use a functionality and at the same time
+  hides how the functionality is implemented. 
+
+  The dylan language convention is to use explizit 
+  **interface modules** for :term:`bindings` which are used
+  external to a library. A :term:`library` may export one or several 
+  **interface modules** to be used by external :term:`libraries<library>`.
+  Typically an **interface module** is one which only provides 
+  :samp:`create` clauses. 
+
+  For **internal interface** there exists not such an explizit convention.
+  A set of :term:`bindings<binding>` shared to other modules within 
+  a library represent a **internal interface**. It is a good convention
+  to *not* share all bindings of :term:`module` via *one* 
+  :samp:`export` clause, but instead to export sets of bindings which 
+  represent **internal interfaces**.
+
+  See also: :term:`roles of modules`.
+
+

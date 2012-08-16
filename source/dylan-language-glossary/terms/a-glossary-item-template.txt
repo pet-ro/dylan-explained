@@ -1,0 +1,20 @@
+.. About this file
+  contains one (!) glosssary entry (and a workaround 
+  note written as glossary entry.) 
+  Onyl multiterms entry should be in one file. In all
+  other cases a file contains one glossary entry.
+  The content gets fetched by a `include` 
+  directive of Sphinx. 
+  write 0 whitespaces in front of the label
+  write 2 whitespaces infront of description.
+
+Label of a glossary term (intended by 3 whitespaces):
+  Use 6 whitespace in front of the glossary term's 
+  description. That's it. 
+
+A workaround note for Sphinx
+  It's not possible to write a ReST `include` directive directly after
+  a `glossary` directive. A possible workaround is to load glossary 
+  items via the `include` directive after a glossary item, which
+  is n't loaded by `include`directive and follows directly
+  after the `glossary`directive.

@@ -1,0 +1,51 @@
+.. About this file
+  - contains one (!) glossary entry in the ReSTructed format  
+  - the glossary entry will be fetched by a `include` 
+    directive of Sphinx.
+  write 0 whitespaces in front of the label
+  write 2 whitespaces infront of description.
+
+.. _dylan-term-binding:
+
+binding 
+-------
+
+  A binding is a simple construct and a core concept of the dylan language. 
+  It is simply an association of a 
+  :ref:`name <dylan-term-name>` 
+  with a value. 
+
+  A binding can either be 
+
+  - modifyable, which means the same name can be bind 
+    to a new value. A modifyable binding is sometimes also called:
+    
+    - *mutable*,
+    - variable or 
+    - writable.
+  or 
+  
+  - a binding can be of the opposite of mutable. 
+    Such a binding is called *immutable*. 
+    Sometimes also:
+   
+    - constant or 
+    - read-only. 
+
+  
+  Each binding is 
+
+  - owned by exactly one *serving module*, but 
+  - it can be shared with other modules via 
+    :ref:`client-server interaction of modules 
+    <dylan-term-client-server-interaction-of-modules>`.
+  
+  
+  
+  The dylan language creates bindings via 
+  :ref:`definitions <dylan-term-definition>`.
+
+  :ref:`Binding sharing <dylan-term-binding-sharing>` is one of two 
+  :ref:`name sharing variants <dylan-term-name-sharing-variants>`.
+  
+  
