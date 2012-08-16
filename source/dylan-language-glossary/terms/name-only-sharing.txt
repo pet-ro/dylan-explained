@@ -1,0 +1,42 @@
+.. About this file
+  - contains one (!) glossary entry in the ReSTructed format  
+  - the glossary entry will be fetched by a `include` 
+    directive of Sphinx.
+  write 0 whitespaces in front of the label
+  write 2 whitespaces in front of description.
+
+.. _dylan-term-name-only-sharing:
+
+name only sharing
+-----------------
+
+  A special :term:`name sharing variant` is :term:`name only sharing`, 
+  which allows a module to play the role of an *interface*.
+
+  A :term:`name only sharing` is a 
+  :term:`client-server interaction of modules` by *serving module* 
+  provides the *client module* a name only.
+  *Name only* means that the *serving module* owns a name which is mot
+  bind to a value. While in the other :term`name sharing variant` the 
+  *serving module* owns a name which is binded to a value. 
+  (That variant s called :term:`binding sharing`.)
+
+  The dylan language allows a :samp:`define module` unit of the
+  *serving module* to provide *name only* via the :samp:`create` clause.  
+
+  :term:`Name only sharing` is the dylan language construct that essential
+  for the :term:`interface role of a module`. 
+
+  A special variant of :term:`name only sharing` is that the 
+  *serving module* does *not* create the :term:`name` , but is a *client* to 
+  *another serving module*. 
+  In case the *serving module* contains a :samp:`use` clause with a
+  *export* option, which re-exports the imported name.
+
+  :samp:`use another-module, import: { a-relevant-name }, export: all;` 
+ 
+
+
+
+
+  	     

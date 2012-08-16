@@ -1,0 +1,49 @@
+.. About this file
+  - contains one (!) glossary entry in the ReSTructed format  
+  - the glossary entry will be fetched by a `include` 
+    directive of Sphinx.
+  write 0 whitespaces in front of the label
+  write 2 whitespaces infront of description.
+
+.. _dylan-term-module:
+
+module	     
+------
+
+  :samp:`define module` is a built-in 
+  :ref:`definition <dylan-term-definition>` of the dylan language.
+
+  A :samp:`define module` unit represents a 
+  :ref:`namespace 
+  <dylan-term-namespace>` 
+  for a set of :ref:`names 
+  <dylan-term-name>` 
+  and their :ref:`bindings 
+  <dylan-term-binding>`.  
+  The bindings of one namespace may be spread over several 
+  :ref:`source records
+  <dylan-term-source-record>` 
+  of a module :ref:`definition 
+  <dylan-term-definition>`. 
+  
+  A :samp:`define module` unit controls the share of internal 
+  :ref:`bindings
+  <dylan-term-binding>` 
+  via an :samp:`export` clause.
+  and it controls the import of external :ref:`bindings
+  <dylan-term-binding>` 
+  from a used module via the options (*import*, *exclude*, (re-) *export*)
+  of the related :samp:`use` clause. 
+
+  A :ref:`binding` represents an association between a name and a value.
+  A :samp:`define module` unit allows to declare a :ref:`name
+  <dylan-term-name>` only via :samp:`create` clause. This allows
+  that a module of the *same* library can provide a binding to that
+  name.
+  The :samp:`create`clause allows a :samp:`define module` 
+  to play the role of a :ref:`interface module
+  dylan-term-interface-role-of-a-module>`.
+ 
+  A :samp:`define module` unit can play several :ref:`roles of modules
+  dylan-term-roles-of-modules`.
+

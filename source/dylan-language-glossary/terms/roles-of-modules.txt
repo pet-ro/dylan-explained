@@ -1,0 +1,112 @@
+.. About this file
+  - contains one (!) glossary entry in the ReSTructed format  
+  - the glossary entry will be fetched by a `include` 
+    directive of Sphinx.
+  write 0 whitespaces in front of the label
+  write 2 whitespaces infront of description.
+
+.. _dylan-term-roles-of-modules:
+
+roles of modules
+-----------------
+
+  It is useful to consider modules as having different roles: interface, 
+  implementation, substrate, client or server. 
+
+  The role most modules play is the role of a *client* or *server*.
+  As soon as a module depends on the names and bindings of another 
+  modules it plays the role of a **client** and requires that another
+  module plays a **serving** role.
+  
+  
+  
+  :term:`Name sharing` situations can be well descripable with 
+  the *client* role and the *server* role of modules. 
+  The term :term:`name sharing` of this glossary shows this.
+
+  The Dylan Reference Manual (DRM) does not use the terms *serving module*
+  and *client module*. Instead the DRM uses the phrases *module being used*
+  and *module being defined*. 
+
+  A used module act as *substrate*.
+
+  In the first coding phase a module may to play several roles.
+  In the on-going code code gets refactoring and different concerns
+  get separated. This is the hour of birth for an
+  *interface* and the related *implementation*.
+
+  It is good coding style to separate these concerns by these
+  advices:
+
+  (*) use an **interface module** to make *external interfaces*  visible.
+  External interface are export by a :samp:`define library`.
+  
+  (*) use an :samp:`export` clause of a :samp:`define module` unit 
+  for each set of bindings, which represent an *internal interface*.
+  Internal interface represent names and binding which are exported 
+  from module of a library to be used by another module of the same library. 
+  An internal interface is used only inside the same library, otherwise it 
+  is an external interface.
+
+  (*) provide for an **interface module** an explizit **implemenation module**.
+  
+  These advices simplifies low-maintenance structure of a dylan project.
+
+  An **interface module** provides 
+  names via the :samp:`create` clause. The :samp:`create` clause
+  causes the name to be reserved by its module's namespace, with 
+  the requisite that definitions be provided by some other module
+  in the *same* library. An **interface module** typically gets 
+  exported by its library  and so it becomes an **external interface**. 
+  An external library will use the **interface module** 
+  and one or more modules of the external library act as *clients* 
+  to the provided bindings. 
+  
+  Is is a good coding style for a *interface module* to create 
+  names of :term:`classes<class>` , 
+  names of :term:`generics` and 
+  names of *shared protocols* 
+  with its own :samp:`create` clause of a :samp:`define module` unit. 
+  A *shared protocol* is a list of names which an **interface module** 
+  imports (uses) from an other module and which get reexported from
+  the *interface* module. In a :samp:`define module` definition of an
+  **interface module** a :samp:`use` clause signals a *shared protocol*.
+  Via the option *import* of the :samp:`use`clause the names of the 
+  shared protocol are imported and via the option *export* these imported
+  name are reexported from the **interface module**.
+
+  It is a good convention to use an explizit **implementation module** 
+  to a given **interface module**. Typically an **implementation module**
+  import its related **interface module** in its first :samp:`use` clause,
+  followed by :samp:`use` clauses of the modules the implementation 
+  depends one. TThe modules an implementation depends on are sometimes called 
+  *subtrate modules*. 
+
+  Typically an **implementation module** consists of a :samp:`use`
+  clause  for its *interface module* and :samp:`use` clauses for its 
+  *substrate modules*.
+
+  Internal interfaces are typically not represented as **interface modules**
+  It is a good convention to use for each sets of bindings which represent 
+  an *internal interface* its own :samp:`export` clause within a 
+  :samp:`define module` unit. A comment line above specifies such an
+  :samp:`export` clause as internal interface.  
+  
+  These conventions simplify a later refactoring process. For example,
+  a refactoring process that turns an internal interface into an external
+  one requires these steps:
+ 
+  (a) turn the bindings of an internal interface 
+  (represented by an :samp:`export` clause of a module) 
+  into names in a **interface module**
+  and 
+  move the related binding a correlated **implementation module**.
+
+  (b) move the **interface module** and the **implementation module**
+  in a new library to complete the process of externalizing an internal
+  interface. 
+
+
+
+
+  	     

@@ -1,0 +1,110 @@
+.. About this file
+  - contains one (!) glossary entry in the ReSTructed format  
+  - the glossary entry will be fetched by a `include` 
+    directive of Sphinx.
+  write 0 whitespaces in front of the label
+  write 2 whitespaces infront of description.
+
+.. _dylan-term-definition:
+
+definition
+----------
+  Definitions are a dylan language construct to create 
+  :ref:`bindings<dylan-term-binding>`. 
+ 
+  The dylan language provides several build-in definitions:
+ 
+  - :samp:`define constant`, 
+  - :samp:`define method`.
+  - :samp:`define class`,
+  - :samp:`define module`, and
+  - :samp:`define library`.
+  
+
+  The last two definitions (
+  :ref:`module
+  <dylan-term-module>`
+  , 
+  :ref:`library
+  <dylan-term-library>`
+  ) 
+  are the dylan language constructs to build up 
+  :ref:`hierarchical modularity
+  <dylan-term-hierarchical-modularity>`.
+ 
+.. _dylan-term-definition(macro): 
+  A special definition is :samp:`define macro`, which allows to 
+  author a *domain specific language (DSL)*.
+
+.. _dylan-term-definition(built-in-constant):
+
+  All the definitions  listed here so far 
+  are *constant* built-in definitions. 
+
+.. _dylan-term-definition(built-in-variable):
+
+  Other definitions 
+  may be *variable* built-in definitions:
+  
+  - Variable built-in definitions are for example: 
+    
+    - :samp:`define variable` and
+    - :samp:`define generic method`.
+  
+    The last definition is essential for a mechanism called
+    :ref:`method dispatch
+    <dylan-term-method-dispatch>`, 
+    which the dylan language provides. 
+
+.. _dylan-term-defintion(links-to-details):
+ 
+  Details for each definition are given in the related entries 
+  in the `Dylan Reference Manaual (DRM)` or in the related glossary
+  entry.
+  
+  - To define a :ref:`sealed
+    <dylan-term-sealing>` 
+    namespace and a :ref:`sealed
+    <dylan-term-sealing>` namespace container:
+    :ref:`module
+    <dylan-term-module>`,
+    :ref:`library
+    <dylan-term-library>`.
+
+  - To define classes with slots which bind to data or methods:
+    :ref:`class
+    <dylan-term-class>`,
+    :ref:`slot
+    <dylan-term-slot>`.
+   
+  - To execute code one can either use a method as basic unit 
+    or build up a container of methods: 
+    :ref:`method
+    <dylan-term-method>`,
+    :ref:`generic method
+    <dylan-term-generic-method>`.
+    
+    When a *generic method* is called, it compares the arguments 
+    it received with the parameter list of the methods it contains.
+    It selects the most appropriate method and invokes it on the 
+    arguments. This technique is called 
+    :ref:`method dispatch
+    <dylan-term-method-dispatch>`.
+  
+
+  - To specify what kind of :ref:`binding
+    <dylan-term-binding>`
+    a name provides to a value:
+    :ref:`constant
+    <dylan-term-binding(kind)>` 
+    or 
+    :ref:`variable
+    <dylan-term-binding(kind)>`.
+
+
+  - To define a *domain specific language*: 
+    :ref:`macro
+    <dylan-term-macro>`
+    .
+ 
+ 

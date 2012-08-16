@@ -1,0 +1,51 @@
+.. About this file
+  - contains one (!) glossary entry in the ReSTructed format  
+  - the glossary entry will be fetched by a `include` 
+    directive of Sphinx.
+  write 0 whitespaces in front of the label
+  write 2 whitespaces infront of description.
+
+.. _dylan-term-binding-sharing:
+
+binding sharing
+---------------
+
+  A *binding sharing* is one of two
+  :ref:`name sharing variants 
+  <dylan-term-name-sharing-variants>` 
+  which the dylan language provides.  
+  In *binding sharing* not only a *name* is shared, but also a
+  *value* that is bound to the *name*.
+ 
+  A *binding sharing* is introduced by an :samp:`export` clause 
+  in :samp:`define module` of a *binding serving module*.
+  This prepares the binding sharing between modules which
+  is a kind of 
+  :ref:`client-server interaction of modules
+  <dylan-term-client-server-interaction-of-modules>`
+  .
+   
+  On the *server side* the related clause in the :samp:`define module` unit
+  looks like this: 
+   
+  - :samp:`export a-binding, another-binding;`
+
+  On the *client side* a possible clause in a :samp:`define module` 
+  may look like this 
+  
+  - :samp:`use a-serving module, import: \{ a-binding, another-binding\};`
+  
+  which is in this case equal to
+
+  - :samp:`use a-serving-module, import: all`;
+
+  To only provide the *a-binding* one may write, for example:
+
+  - :samp:`use a-serving-module, inport: all, exclude: {another-binding};`
+
+  The *binding sharing*  allows a :ref:`module <dylan-term-module>` 
+  to play the role of a *substrate* (see
+  :ref:`roles of modules
+  <dylan-term-roles-of-modules>`).   
+    
+ 

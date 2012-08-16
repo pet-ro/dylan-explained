@@ -1,0 +1,235 @@
+
+.. About this file
+  - contains one (!) glossary entry in the ReSTructed format  
+  - the glossary entry will be fetched by a `include` 
+    directive of Sphinx.
+  write 0 whitespaces in front of the label
+  write 2 whitespaces infront of description.
+
+.. _dylan-term-client-server-interaction-of-modules:
+
+client-server interaction of modules
+------------------------------------
+
+  :ref:`Name sharing <dylan-term-name-sharing-variants>`
+  between :term:`modules<module>` can be described as a 
+  :ref:`client-server interaction 
+  <dylan-term-client-server-interaction-of-modules>`
+ 
+
+  - The :ref:`module
+    <dylan-term-module>`
+    that provides the :ref:`name 
+    <dylan-term-name>` 
+    is called **serving module**.
+  
+  - The :ref:`module
+    <dylan-term-module>` 
+    that likes to access a :ref:`name 
+    <dylan-term-name>` 
+    of a serving module is called **client module**. 
+  
+  A *client module* may be an *internal* or an *external* one: 
+  
+  - a **internal client module** belongs to the same library as
+    the *serving module*.
+
+  - a **external client module** does not belong to same library
+    as the *serving module*. 
+  
+  The declaration of a :term:`client-server interaction of modules` 
+  will distinguish two :ref:`name sharing variants
+  <dylan-term-name-sharing-variants>`: 
+
+  - in a :ref:`binding sharing 
+    <dylan-term-binding-sharing>` 
+    process the *serving module*  will share a :ref:`name
+    <dylan-term-name>`
+    *and* its :ref:`binding 
+    <dylan-term-binding>`.
+    This is done via a :samp:`export` clause
+    in a :samp:`define module` unit;
+
+  - in a :ref:`name only sharing
+    <dylan-term-name-only-sharing>`
+    process the *serving module* will share a :ref:`name
+    <dylan-term-name>`
+    *only*. 
+    This is done via a :samp:`create` clause in a :samp:`define module` unit. 
+    
+
+  In a name sharing process to  an  **internal client module** only
+  frontier of those units get crossed:
+ 
+  - the frontier of the serving module and 
+  
+  - the frontier of the  client module.
+  
+  In the case of an **external client module** the name 
+  sharing process crosses additionally two frontiers: 
+
+  - the frontier of the  *serving module* 's :ref:`library
+    <dylan-term-library>` 
+    and 
+
+  - the frontier of :ref:`library 
+    <dylan-term-library>` 
+    to the *client module* .
+
+  In the dylan language :ref:`libraries 
+  <dylan-term-library>` 
+  and :ref:`modules 
+  <dylan-term-module>` are :ref:`sealed 
+  <dylan-term-sealing>`
+  language constructs. 
+  Therefore each frontier crossing requires an explizit statement in
+  the involved units:
+  
+  - involved in a **share to an internal client module** 
+    are  
+    
+    - the :samp:`define module` unit of the 
+      *serving module* and 
+    - the the :samp:`define module` 
+      unit of the *client module*.
+ 
+  
+
+  - Extending a *share to an internal client module* to a 
+    **share to an external client module** requires two additional
+    steps:
+  
+    - Export the *serving module* from its :ref:`library
+      <dylan-term-library>`
+      . 
+
+      - This is done via a :samp:`export` clause in *same* 
+        :samp:`define library` unit to which the
+        *serving module* belongs.
+
+    -  Make the *serving module* useable in the :ref:`library
+       <dylan-term-library>`
+       of the *external client module*.
+  
+       - This is done via a :samp:`use` clause in the *same* 
+         :samp:`define library` unit to which the *client module* 
+         belongs. The :samp:`use` clause specifies the
+         *serving module*'s :ref:`library 
+         <dylan-term-library>`
+         . 
+  
+  A sharing process, either a :ref:`name only sharing
+  <dylan-term-name-only-sharing>`
+  or :ref:`binding sharing
+  <dylan-term-binding-sharing>`
+  , 
+  requires to distinguish to interaction types:
+
+  - in a interaction to an **internal client module**
+    a *useable* name gets *used* when 
+  
+    - the *client module* states an :samp:`use` clause for the 
+      *serving module* and
+  
+    - specifies the name to be shared in the *options* of 
+      this :samp:`use` clause.
+
+  - a interaction to an **external client module** requires
+    additional steps:
+
+    - the *serving module* must be *exported* by its library. 
+
+    - the library on the client side must *use* library which
+      contains the *serving module*.
+
+
+
+  **Controlling options of a client-server interaction**  of modules*: 
+  
+  - On the *server* side of a client-server interaction 
+    there are not much control options.
+    
+    The server side specifies only which
+    kind of :ref:`names sharing variant
+    <dylan-term-name-sharing-variants>`:
+  
+    - :ref:`binding sharing
+      <dylan-term-binding-sharing>`
+      via  
+      
+      - :samp:`export` clause
+      or  
+  
+    - :ref:`name only sharing
+      <dylan-term-name-only-sharing>`
+      via
+
+      - :samp:`create` clause
+     
+    and uses the related clause for the :samp:`define module` 
+    of the *serving module*.
+
+
+ 
+  - on the *client* side the interaction is controlled via 
+    these steps:
+
+    - state which *serving module* gets used to share a name onyl
+      or a binding.
+      This is done via a :samp:`use` clauses. 
+    
+    - The *import* option or the *exclude* option specifies
+      which names the *client module* shares from the 
+      specified *serving module*.
+
+    - The option *export* specifies which of the *imported names* 
+      from the *serving module* get exported again from the *client module*.
+      This forwarding of a name can either
+      
+      - use the name in the *serving module* or 
+      - use the name in the *client module*.
+    
+      The usefullness of this forwarding of a name is
+      explained in the 
+      :ref:`interface role of a module
+      <dylan-term-interface-role-of-a-module>`
+      .
+      
+    - The options *prefix* and *rename* specify whether a shared 
+      binding changes its name for the scope of the *client module*. 
+      In case of *rename* the renaming overrides what a prefix provided.
+      There is also possiblity to specify the renaming within the 
+      *import* option directly. To do this write, for example,
+      :samp:`import: {skew-liw => wrap-line}`
+      
+
+  
+  To summarize:
+
+  -  The server side is characterized by  
+
+     - each :samp:`export` clause in a :samp:`define module` unit signals 
+       that this module acts as *server* for a :term:`binding sharing`
+ 
+     - each :samp:`create` clause in a :samp:`define module` unit signals 
+       that this module acts as *server* for a :term:`name only sharing`
+ 
+     - In the case that the serving module itsself is a client, for example,
+       for a :ref:`name only sharing
+       <dylan-term-name-only-sharing>` 
+       from another serving module there is a :samp:`use` clause, which 
+       typically forwards the relevant name directly.
+ 
+  - The client side is characterizied by
+
+    - each :samp:`use` clause in a :samp:`define module` unit 
+      signals that this module acts as *client* to a *serving module*.
+
+
+  The *client-server interaction* support :term:`modularization`.
+
+  Base on the provided :ref:`name sharing variant
+  <dylan-term-name-sharing-variants>` 
+  of the interaction an involved module plays a different role
+  (see :ref:`roles of modules
+  <dylan-term-roles-of-modules>`). 
