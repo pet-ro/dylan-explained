@@ -11,6 +11,7 @@ Dylan Explained
 
 [PerlGit]:     http://docs.activestate.com/activeperl/5.14/lib/pods/perlgit.html "PerlGit - Detailed information about Git and the Perl Repository"
 [PerlGit - Topic branches]: http://docs.activestate.com/activeperl/5.14/lib/pods/perlgit.html#topic_branches_and_rewriting_history "Topic branches and rewriting history"
+[remove submodule]: http://pitupepito.homelinux.org/?p=24 "How to remove a git submodule"
 
 Dylan Explained is a documentation project related to the project
 [opendylan][] at [dylan-lang][].
@@ -110,7 +111,11 @@ Sphinx renders ReST-files into, for example, html.
    
    make: *** keine Regel, um html zu erstellen
 
+   It might be helpful to remove submodule sphinx-extension
+   
+   - see: [remove submodule][] 
   
+   and add it again
     
 Git Appendix A: Best Practice: The branches of this git project
 ---------------------------------------------------------------
