@@ -1,0 +1,34 @@
+.. About this file
+  - contains one (!) glossary entry in the ReSTructed format  
+  - the glossary entry will be fetched by a `include` 
+    directive of Sphinx.
+  write 0 whitespaces in front of the label
+  write 2 whitespaces infront of description.
+
+.. _dylan-term-name:
+
+name
+---- 
+  Names are an essential part of :term:`definitions <definition>`. 
+  A :term:`definition` creates an association between a name and a value.
+  Such an association is called :term:`binding`.
+
+  The dylan language allows to create a name alone, too. 
+  A name alone is not associate to value, but must get its
+  association to a value by one of the modules of the *same*
+  library. A :samp:`create` clause of :samp:`define module`
+  unit creates a *name only*, which means this :term:`name`  is not 
+  associated to a *value*. *Name only* means: 
+  A name without binding.
+
+  In the dylan language  the *sharing of name* occurs between 
+  :term:`modules<module>`. To understand the different 
+  :term:`roles of modules` is necessary to distinct between
+  
+  (*) :term:`name sharing`, which shares a name which is bound to value.
+  
+  (*) :term:`name only sharing`, which shares a name which is not bound
+  to a value. 
+
+  The glossary term :term:`roles of modules` depict the usefulness of this
+  distinction.

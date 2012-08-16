@@ -1,0 +1,10 @@
+.. About this 
+  contains one (!) glosssary entry. The content will be fetched 
+  by a `include` directive of Sphinx to build up the glossary
+  write 0 whitespaces in front of the label
+  write 2 whitespaces in front of description.
+
+abstration
+  **a to do**: link by :term:`devide and conquer of software engineering`
+
+

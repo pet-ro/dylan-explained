@@ -1,0 +1,35 @@
+.. About this file
+  - contains one (!) glossary entry in the ReSTructed format  
+  - the glossary entry will be fetched by a `include` 
+    directive of Sphinx.
+  write 0 whitespaces in front of the label
+  write 2 whitespaces infront of description.
+
+compilation unit
+  A (large) programm typically gets splitted into fragements. 
+  Separately compilable fragments are known as compilation units.  
+  A compilation unit is specified via the dylan language construct 
+  :samp:`define library`. Each library is represents a separately
+  compilable fragment. Such a compilation unit can be represented 
+  any number of :term:`source records<source record>`. 
+  A :term:`linker` assembles a compilation unit together with 
+  those other separately compiled libraries, which are used by the code
+  of the compilation unit. Such an assembly represents
+  executable code (exe) or dynamically linkable code (dll). 
+  A :term:`compilation unit` (:term:`library`) is the lowest granularity
+  level to assembe code into a standalone binary (exe, dll).
+  
+  Which granularity level of aggregation a programming language uses 
+  as compilation unit depends on (mostly) its language specification.
+  For each programmming language exists a specific relation between 
+  its modularity and how code gets packaged into code.
+
+  The Dylan Reference Manual declares the granuarity of a library 
+  as :term:`compilation unit` of non-interactive code. For interactive code
+  the granularity level for packaging code into binaries is on a finer 
+  level.  
+
+  A compilation unit ( :term:`library`) requires recompilation, if 
+  one of its :term:`source records<source record>` or one of its used 
+  :term:`libraries<library>` have actually changed.
+

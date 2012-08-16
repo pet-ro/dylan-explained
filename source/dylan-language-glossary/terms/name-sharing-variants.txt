@@ -1,0 +1,32 @@
+.. About this file
+  - contains one (!) glossary entry in the ReSTructed format  
+  - the glossary entry will be fetched by a `include` 
+    directive of Sphinx.
+  write 0 whitespaces in front of the label
+  write 2 whitespaces infront of description.
+
+.. _dylan-term-name-sharing-variants:
+
+name sharing variants
+---------------------
+
+  Names are shared between 
+  :ref:`modules <dylan-term-module>`. 
+
+  There are two variants: sharing a name and its binded value 
+  (:ref:`binding sharing <dylan-term-binding-sharing>`) 
+  or 
+  :ref:`name only sharing <dylan-term-name-only-sharing>`.
+ 
+  These variants define which role a module plays:
+  
+  - The  ref:`interface role of a module 
+    <dylan-term-interface-role-of-a-module>` 
+    requires a :ref:`name only sharing <dylan-term-name-only-sharing>`. 
+
+  - The :term:`substrate role of a module` requires
+    a :ref:`binding sharing <dylan-term-binding-sharing>`.
+
+  Names are shared in a :ref:`client-server interaction of modules
+  <dylan-term-client-server-interaction-of-modules>`. 
+ 

@@ -1,0 +1,23 @@
+.. About this 
+  contains one (!) glosssary entry. The content will be fetched 
+  by a `include` directive of Sphinx to build up the glossary.
+  write 0 whitespaces in front of the label
+  write 2 whitespaces infront of description.
+
+buttom-up development
+  A buttom-up development process becomes easier when a well designed grouping 
+  mechanism is provided. The dylan language support such grouping mechanism. 
+  In buttom-up development you first hack some 
+  :term:`definitions <definition>`. 
+  You may decide to spread them over several 
+  :term:`source records <source record>` (source files).
+  As your code grows, name clashes pop up as you try to stay consistent 
+  with of your model. At this point you would like to open up a new 
+  namespace. The dylan language provides a new :term:`namespace` with each 
+  :term:`definition of a module <module>`. Several namespaces can be grouped
+  together to a :term:`library`. New modules and libraries in dylan are 
+  :term:`sealed`, which means no other module or library can use its names and
+  binding. To break this default sealing you have to explicitly export the 
+  names and bindings from their source modularity unit and import them to 
+  their new destination modularity. These dylan language features support 
+  the concept of :term:`hierarchical modularity` well.

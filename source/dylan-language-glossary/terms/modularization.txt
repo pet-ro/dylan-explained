@@ -1,0 +1,24 @@
+.. About this 
+  contains one (!) glosssary entry. The content
+  gets fetched by a `include` directive of Sphinx.
+  write 0 whitespace in front of the label
+  write 2 whitespaces infront of description.
+
+.. _dylan-term-modularization:
+
+modularization
+--------------
+
+  The dylan language support modularization well: 
+  it provides a :term:`hierarchical modularity`.
+  Code gets encapuslated into :term:`modules <module>`. 
+  :term:`Modules <module>` are :term:`sealed <sealing>` and can 
+  be nested. 
+  The top-level modul is named :term:`dylan-user`.
+  In this module a software project defines it 
+  :term:`library` which represents its 
+  hierarchy of :term:`modules <module>`.
+ 
+  For non- :term:`interactive code` a :term:`library`
+  is the :term:`compilation unit` and the finest granularity
+  unit of :term:`deployment` in the dylan language.

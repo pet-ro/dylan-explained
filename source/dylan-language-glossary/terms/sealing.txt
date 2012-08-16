@@ -1,0 +1,63 @@
+.. About this file
+  - contains one (!) glossary entry in the ReSTructed format  
+  - the glossary entry will be fetched by a `include` 
+    directive of Sphinx.
+  write 0 whitespaces in front of the label
+  write 2 whitespaces infront of description.
+
+.. _dylan-term-sealing:
+
+sealing
+-------
+
+  Sealing enables a range of compiler optimizations 
+  and  support security of software components.
+
+  Several language constructs of the dylan language are
+  provided a sealed unit by default: 
+  :samp:`define library`,  
+  :samp:`define module`, 
+  :samp:`define class`, 
+  :samp:`define generic method`.
+ 
+  The dylan language construct :samp:`define library` is a sealed one. 
+  No other `library` can use the defined namespaces ( :ref:`modules
+  <dylan-term-module>`
+  ) inside. Only those modules  which are explicitly exported 
+  in a `define library` unit are accessible to external libraries.
+  An exporting library become a *substrate library* for a *client library*.
+
+  In the same manner is the dylan language construct :samp:`defines module` 
+  a sealed one: No other module can use the names and their bindings, unless
+  the :samp:`define module` gives explizit access. A name exporting module
+  become a *substrate module* for a *client module*.
+ 
+  Also :samp:`define class` defines a sealed :ref:`class
+  <dylan-term-class>`. 
+  A sealed class cannot have direct subclasses 
+  other than those explicitly known in the same :ref:`library
+  <dylan-term-library>`
+  . 
+  Only explicitly as *open* defined classes are not sealed
+  ( :samp:`define open class` ). 
+           
+  :samp:`define generic method` defines a sealed generic function.
+  To a sealed generic function one can add only methods 
+  that are explicitly known in the same :ref:`library
+  <dylan-term-library>`
+  .
+  The opposite of a sealed generic function is an open one:
+  :samp:`define open generic method`. 
+
+  Beside these dylan language construct that are sealed by default, there
+  a further :ref:`definition
+  <dylan-term-definition>` 
+  which seals:
+  
+  :samp:`define sealed domain`.
+  
+  One can seal a portion of a 
+  generic function or of a class hierarchy.
+  A sealed domain declares that portion a generic function 
+  or of a class hierarchy as invariant.
+

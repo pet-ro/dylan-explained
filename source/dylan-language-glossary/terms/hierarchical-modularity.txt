@@ -1,0 +1,50 @@
+.. About this file
+  - contains one (!) glossary entry in the ReSTructed format  
+  - the glossary entry will be fetched by a `include` 
+    directive of Sphinx.
+  write 0 whitespaces in front of the label
+  write 2 whitespaces infront of description.
+
+.. _dylan-term-hierarchical-modularity:
+
+hierarchical modularity
+-----------------------
+
+  To cope with the complexity of very large systems the dylan language 
+  provides a hierarchical modularity. Hierarchical modularity means 
+  that a recurring pattern is used to build up the structure of the system.
+  Such a hierarchical modularity can be build in a 
+  bottum-up development way
+  or in a top-down development way.
+  The :term:`buttom-up development` approach starts with writing 
+  down names and their 
+  :ref:`bindings<dylan-term-binding>` and 
+  grouping them into namespaces which are called 
+  :ref:`modules <dylan-term-module>`. 
+  The 
+  :ref:`top-down development<dylan-term-top-down-development>` 
+  approach starts with writing down a 
+  :ref:`library<dylan-term-library>` 
+  hierarchy to group the  namespaces 
+  ( :ref:`modules<dylan-term-module>` ).
+  A module is a 
+  :ref:`sealed<sealing>` 
+  namesspace, which means only exported name and bindings can be used 
+  by other 
+  :ref:`modules<dylan-term-module`. 
+  :ref:`Modules<dylan-term-module>` 
+  are grouped together by one or more 
+  :ref:`libraries<dylan-term-library>`. 
+  Libraries and modules are the core language elements to build up 
+  the :ref:`hierarchical modularity<dylan-term-hierarchical-modularity`.
+
+
+  The recurring pattern that builds up the hierarchical modularity 
+  is aggregation:
+  A module aggregates names (and their bindings) into a namespace;
+  a library aggregates namespaces to executable code units: exe or dll.
+
+
+
+
+ 

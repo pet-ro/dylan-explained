@@ -1,0 +1,14 @@
+.. About this 
+  contains one (!) glosssary entry. The content
+  gets fetched by a `include` directive of Sphinx.
+  write 0 whitespace in front of the label
+  write 2 whitespaces in front of description.
+
+devide and conquer of software engineering 
+  Abstaction and modularization are the `divide and conquer`
+  of software engineering. The `devide and conquer` process
+  of software engineering goes along with changing 
+  the granularity of information hiding and information 
+  exposing with each new abstraction level. 
+  More details are given in the entries 
+  :term:`abstraction` and :term:`modularization`.
