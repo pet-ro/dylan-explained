@@ -36,6 +36,8 @@ client-server interaction of modules
 
   - a **external client module** does not belong to same library
     as the *serving module*. 
+
+.. _dylan-term-client-server-interaction-of-modules(sharing-variants):
   
   The declaration of a :term:`client-server interaction of modules` 
   will distinguish two :ref:`name sharing variants
@@ -56,8 +58,12 @@ client-server interaction of modules
     <dylan-term-name>`
     *only*. 
     This is done via a :samp:`create` clause in a :samp:`define module` unit. 
-    
+ 
+  The term *name sharing* will be used to specify one of both variants.
 
+
+.. _dylan-term-client-server-interaction-of-modules(sharing-process):    
+ 
   In a name sharing process to  an  **internal client module** only
   frontier of those units get crossed:
  
@@ -76,6 +82,8 @@ client-server interaction of modules
     <dylan-term-library>` 
     to the *client module* .
 
+.. _dylan-term-client-server-interaction-of-modules(sealed-units):
+
   In the dylan language :ref:`libraries 
   <dylan-term-library>` 
   and :ref:`modules 
@@ -92,8 +100,6 @@ client-server interaction of modules
       *serving module* and 
     - the the :samp:`define module` 
       unit of the *client module*.
- 
-  
 
   - Extending a *share to an internal client module* to a 
     **share to an external client module** requires two additional
@@ -117,6 +123,8 @@ client-server interaction of modules
          *serving module*'s :ref:`library 
          <dylan-term-library>`
          . 
+
+.. _dylan-term-client-server-interaction-of-modules(distinguish-variants):
   
   A sharing process, either a :ref:`name only sharing
   <dylan-term-name-only-sharing>`
@@ -142,9 +150,9 @@ client-server interaction of modules
     - the library on the client side must *use* library which
       contains the *serving module*.
 
+.. _dylan-term-client-server-interaction-of-modules(control-options):
 
-
-  **Controlling options of a client-server interaction**  of modules*: 
+  **Control options of a client-server interaction**  of modules*: 
   
   - On the *server* side of a client-server interaction 
     there are not much control options.
@@ -203,7 +211,7 @@ client-server interaction of modules
       *import* option directly. To do this write, for example,
       :samp:`import: {skew-liw => wrap-line}`
       
-
+.. _dylan-term-client-server-interaction-of-modules(summary):
   
   To summarize:
 
