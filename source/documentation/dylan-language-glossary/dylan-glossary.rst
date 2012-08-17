@@ -103,6 +103,7 @@ Note:
 .. include:: ./terms/binding-sharing.txt
 .. include:: ./terms/class.txt
 .. include:: ./terms/client-server-interaction-of-modules.txt
+.. include:: ./terms/compilation-unit.txt
 .. include:: ./terms/definition.txt
 
 

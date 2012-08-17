@@ -5,31 +5,68 @@
   write 0 whitespaces in front of the label
   write 2 whitespaces infront of description.
 
+.. _dylan-term-compilation-unit:
+
 compilation unit
-  A (large) programm typically gets splitted into fragements. 
-  Separately compilable fragments are known as compilation units.  
-  A compilation unit is specified via the dylan language construct 
-  :samp:`define library`. Each library is represents a separately
-  compilable fragment. Such a compilation unit can be represented 
-  any number of :term:`source records<source record>`. 
-  A :term:`linker` assembles a compilation unit together with 
-  those other separately compiled libraries, which are used by the code
-  of the compilation unit. Such an assembly represents
-  executable code (exe) or dynamically linkable code (dll). 
-  A :term:`compilation unit` (:term:`library`) is the lowest granularity
-  level to assembe code into a standalone binary (exe, dll).
+----------------
+
+  A programm typically gets splitted into fragements. 
   
-  Which granularity level of aggregation a programming language uses 
-  as compilation unit depends on (mostly) its language specification.
-  For each programmming language exists a specific relation between 
-  its modularity and how code gets packaged into code.
+  - separately compilable fragments are known as 
+    :ref:`compilation unit
+    <dylan-term-compilation-unit>`.  
 
-  The Dylan Reference Manual declares the granuarity of a library 
-  as :term:`compilation unit` of non-interactive code. For interactive code
-  the granularity level for packaging code into binaries is on a finer 
-  level.  
 
-  A compilation unit ( :term:`library`) requires recompilation, if 
-  one of its :term:`source records<source record>` or one of its used 
-  :term:`libraries<library>` have actually changed.
+  Which *granularity level* a programming language uses 
+  as *compilation unit* depends on
 
+  - its language specification.
+  - its compiling process (interactive vs non-interactive)
+
+.. _dylan-term-compilation-unit(dylan-granularity-level):
+
+  The Dylan Reference Manual declares 
+
+  -  a :ref:`library
+     <dylan-term-library>`
+     represent a *compilation unit* for non-interactive code. 
+
+     All elements of a library build up the *compilation unit*:
+     
+     -  one :samp:`define library` unit and 
+     -  one or more :samp:`define module` units 
+     -  the :ref:`bindings
+        <dylan-term-binding>`
+        of each :ref:`module
+        <dylan-term-module>`.
+
+     Such a *compilation unit* can be represented its
+     :ref:`modules
+     <dylan-term-module>` by
+     any number of :ref:`source records
+     <dylan-term-source-record>`.
+
+
+  - A compiler which is part of a  
+    *integrate development environment (IDE)* 
+    may support to compile small fragements than libraries. 
+    (interactive code)
+ 
+.. _dylan-term-compilation-unit(process): 
+  
+  In a compilation process a *compilation unit* is turned  
+  into 
+ 
+  - executable code (exe) or 
+  - dynamically linkable code (dll).
+
+  A compilation unit requires recompilation, if 
+  
+  - one of its :ref:`source records
+    <dylan-term-source-record>` 
+    or 
+  
+  - one of its used  *compilation units* have actually changed.
+ 
+  
+  
