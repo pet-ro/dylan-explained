@@ -158,7 +158,8 @@ client-server interaction of modules
       via  
       
       - :samp:`export` clause
-      or  
+      
+    or  
   
     - :ref:`name only sharing
       <dylan-term-name-only-sharing>`
