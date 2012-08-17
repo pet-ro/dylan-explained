@@ -11,5 +11,5 @@ Currently provides content
 .. toctree::
  
 
-   dylan-language-glossary/dylan-glossary
+   /documentation/dylan-language-glossary/dylan-glossary
 
