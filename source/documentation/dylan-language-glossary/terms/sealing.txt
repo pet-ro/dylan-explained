@@ -13,25 +13,164 @@ sealing
   Sealing enables a range of compiler optimizations 
   and  support security of software components.
 
+.. _dylan-term-sealing(directive-sealed):
+
+  A *sealed* language construct *disallows*
+  
+  - an *external use* of its 
+    :ref:`library
+    <dylan-term-library>` content.
+    
+    - examples are: 
+      
+      - :samp:`define library`, 
+      - :samp:`define module`.
+
+  - an *addition* from outside the :ref:`library
+    <dylan-term-library>`
+    in which the language construct is defined.
+
+    - examples are: 
+   
+      - :samp:`define class`, 
+      - :samp:`define generic method`
+      - :samp:`define sealed domain` of a 
+        :ref:`method
+        <dylan-term-method>`
+        or a :ref:`slot
+        <dylan-term-slot>`.
+ 
+  Further explanation are given :ref:`below 
+  <dylan-term-sealing(defaults-related-to-language-constructs)>´    
+
+   
+  What the dylan language reflects with the directive *sealed* 
+  related to 
+ 
+  - the :ref:`compilation unit
+    <dylan-term-compilation-unit>`
+
+    - the dylan language construct :samp:`define library` defines 
+      the content of a :ref:`compilation unit
+      <dylan-term-compilation-unit>`
+  
+.. _dylan-term-sealing(directives-in context-class):
+  
+  In the context of a class 
+ 
+  - there are non compiler optimizations only related to the 
+    sealing of the compilation unit, which is reflected by
+    the adjective pair *sealed* / *open*.
+  
+  Additional optimization could be done related to
+  
+  - *direct instances* and
+    
+    - reflected by the adjective pair *abstract* / *concrete*
+     
+  - *multiple inheritance*.
+  
+    - reflected by the adjective pair *primary* / *free*.
+
+
+
+.. _dylan-term-sealing(directives-in context-generic-function):
+
+  The dylan language has well also defined sealing concept related
+  to :ref:`generic function`.
+
+  - :samp:`define sealed method`
+  - :samp:`sealed slot` 
+     
+    - :ref:`slots
+      <dylan-term-slot>`
+      are implemented as :ref:`generic function
+      <dylan-term-generic-function>`.
+      Therefore a slot as specification in a :samp:`define class` does
+      belong to the *sealing* of :ref:`generic functions
+      <dylan-term-generic-function>`. 
+
+    :samp:`define sealed method` and :samp:`sealed slot`
+    are short forms. 
+
+    - The adjective *sealed* in the definition of a method
+      supersedes an additional statement:
+
+      - :samp:`define sealed domain` :ref:`the-method-name
+        <dylan-term-method>`
+      
+    
+    - The adjective *sealed* in a :ref:`slot specification
+      <dylan-term-slot>` 
+      of a
+      :samp:`define class` supersedes to define a sealed domain
+      on the related getter generic function  and setter generic function.
+      
+       - :samp:`define sealed domain` *a-slot-name* (<*a-class-name*>)
+          
+         - defines the sealed domain of a slot-getter
+
+       - :samp:`defines sealed domain` *a-slot-name*-setter (<*a-class-name*>)
+          
+         - defines the sealed domain of a slot-setter 
+       
+
+Short form of these sealing a domain is to use the adjective sealed in the definition of the domain:
+
+define sealed method 
+sealed slot 
+    
+
+.. _dylan-term-sealing(defaults-related-to-language-constructs):
+
+
   Several language constructs of the dylan language are
-  provided a sealed unit by default: 
-  :samp:`define library`,  
-  :samp:`define module`, 
-  :samp:`define class`, 
-  :samp:`define generic method`.
+  provided a *sealed* unit by default: 
+
+  - :samp:`define library`,
+    
+    - :its content can't` be used outside itsself, unless it is exported.
+    - :ref:`more explained below
+      <_dylan-term-sealing(library)>`
+ 
+    
+  - :samp:`define module`, 
+
+    - :its content can't` be used outside itsself, unless it is exported.
+    - :ref:`more explained below
+      <_dylan-term-sealing(module)>`
+
+  - :samp:`define class`, 
+   
+    - it can't be directly subclassesed outside, unless it is declared *open*.
+    - :ref:`its sealing explained
+      <_dylan-term-sealing(class)>`
+
+  - :samp:`define generic method`.
+
+  
+
+.. _dylan-term-sealing(library):
  
   The dylan language construct :samp:`define library` is a sealed one. 
-  No other `library` can use the defined namespaces ( :ref:`modules
+  No other :ref:`library`
+  <dylan-term-library>`
+  can use the defined namespaces  :ref:`modules
   <dylan-term-module>`
   ) inside. Only those modules  which are explicitly exported 
   in a `define library` unit are accessible to external libraries.
+ 
   An exporting library become a *substrate library* for a *client library*.
+
+.. _dylan-term-sealing(module):
 
   In the same manner is the dylan language construct :samp:`defines module` 
   a sealed one: No other module can use the names and their bindings, unless
   the :samp:`define module` gives explizit access. A name exporting module
   become a *substrate module* for a *client module*.
  
+.. _dylan-term-sealing(class):
+
   Also :samp:`define class` defines a sealed :ref:`class
   <dylan-term-class>`. 
   A sealed class cannot have direct subclasses 
@@ -40,14 +179,29 @@ sealing
   . 
   Only explicitly as *open* defined classes are not sealed
   ( :samp:`define open class` ). 
+
+ 
            
+.. _dylan-term-sealing(generic-method):
+
   :samp:`define generic method` defines a sealed generic function.
   To a sealed generic function one can add only methods 
   that are explicitly known in the same :ref:`library
   <dylan-term-library>`
   .
   The opposite of a sealed generic function is an open one:
-  :samp:`define open generic method`. 
+  :samp:`define open generic method`.
+
+.. _dylan-term-sealing(method):
+
+  :samp:`define generic method` defines a sealed generic function.
+  To a sealed generic function one can add only methods 
+  that are explicitly known in the same :ref:`library
+  <dylan-term-library>`
+  .
+  The opposite of a sealed generic function is an open one:
+  :samp:`define open generic method`.
+ 
 
   Beside these dylan language construct that are sealed by default, there
   a further :ref:`definition
