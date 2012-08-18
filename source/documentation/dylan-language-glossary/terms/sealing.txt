@@ -15,6 +15,16 @@ sealing
 
 .. _dylan-term-sealing(directive-sealed):
 
+  What the dylan language reflects with the directive *sealed* 
+  related to 
+ 
+  - the :ref:`compilation unit
+    <dylan-term-compilation-unit>`
+
+    - the dylan language construct :samp:`define library` defines 
+      the content of a :ref:`compilation unit
+      <dylan-term-compilation-unit>`
+
   A *sealed* language construct *disallows*
   
   - an *external use* of its 
@@ -40,19 +50,10 @@ sealing
         or a :ref:`slot
         <dylan-term-slot>`.
  
-  Further explanation are given :ref:`below 
-  <dylan-term-sealing(defaults-related-to-language-constructs)>´    
+  Further explanations are given :ref:`below
+  <dylan-term-sealing(defaults-related-to-language-constructs)>`.   
 
    
-  What the dylan language reflects with the directive *sealed* 
-  related to 
- 
-  - the :ref:`compilation unit
-    <dylan-term-compilation-unit>`
-
-    - the dylan language construct :samp:`define library` defines 
-      the content of a :ref:`compilation unit
-      <dylan-term-compilation-unit>`
   
 .. _dylan-term-sealing(directives-in context-class):
   
@@ -74,7 +75,7 @@ sealing
 
 
 
-.. _dylan-term-sealing(directives-in context-generic-function):
+.. _dylan-term-sealing(directives-in-context-generic-function):
 
   The dylan language has well also defined sealing concept related
   to :ref:`generic function`.
@@ -114,12 +115,7 @@ sealing
           
          - defines the sealed domain of a slot-setter 
        
-
-Short form of these sealing a domain is to use the adjective sealed in the definition of the domain:
-
-define sealed method 
-sealed slot 
-    
+ 
 
 .. _dylan-term-sealing(defaults-related-to-language-constructs):
 
