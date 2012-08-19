@@ -4,9 +4,14 @@ Welcome to the Dylan Explained
 Dylan Explained is a documentation project related to 
 http://www.opendylan.org
 
-Currently provides content
-=========================
+Currently provided content
+==========================
 
+    These are the first content element, which reached the state:
+
+    - proofreading
+
+ 
 
 .. toctree::
  
