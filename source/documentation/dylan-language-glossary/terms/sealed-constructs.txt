@@ -1,0 +1,186 @@
+.. About this file
+  - contains one (!) glossary entry in the ReSTructed format  
+  - the glossary entry will be fetched by a `include` 
+    directive of Sphinx.
+  write 0 whitespaces in front of the label
+  write 2 whitespaces infront of description.
+
+.. _dylan-term-sealed-constructs:
+
+sealed constructs
+-----------------
+
+  A :ref:`sealed
+  <dylan-term-sealed>` language construct either 
+  :ref:`disallows external use
+  <dylan-term-sealed-constructs(disallows-external-use)>`
+  or 
+  :ref:`disallows external changes
+  <dylan-term-sealed-constructs(disallows-external-changes)>`
+  related to :ref:`library
+  <dylan-term-library>`
+  which contains the *sealed* language construct.
+
+
+.. _dylan-term-sealed-constructs(disallows-external-use):
+
+  *By default sealed* dylan language constructs are
+   
+  - :samp:`define library`
+  - :samp:`define module`      
+
+  :ref:`Libraries
+  <dylan-term-library>` 
+  and
+  :ref:`modules
+  <dylan-term-module>`
+  are sealed by default 
+  
+  - to *disallow the external use* of its content, 
+  - *unless* content is explizitly exported.
+
+
+  
+.. _dylan-term-sealed-constructs(disallows-external-changes):
+
+  *Other by default sealed* dylan language constructs are
+
+  - :samp:`define class`
+  - :samp:`define generic method`
+
+  which in general 
+
+  - to *disallow external changes*
+    to its definition from the outside of the library, 
+    in which the language construct is defined.
+
+.. _dylan-term-sealed-constructs(sealed-class):
+
+  A :ref:`class
+  <dylan-term-class>`
+  is sealed by default 
+
+  - to disallows that the :ref:`class
+    <dylan-term-class>`  
+    
+    - can be directly :ref:`subclassed
+      <dylan-term-subclassing>`,
+      form outside of the :ref:`library
+      <dylan-term-library>` 
+      in which the the :ref:`class
+      <dylan-term-class>`
+      is defined;    
+     
+  - unless it is specified with the adjective *open*:
+     
+    - :samp:`define open class`
+  
+.. _dylan-term-sealed-constructs(sealed-generic-method):
+ 
+ 
+  A :ref:`generic function
+  <dylan-term-generic-function>`
+  is sealed by default 
+
+  - to disallows that methods 
+
+    - can be added to the :ref:`generic function
+      <dylan-term-generic-function>` 
+      form outside of the :ref:`library
+      <dylan-term-library>` 
+      in which the the :ref:`generic function
+      <dylan-term-generic-function>`
+      is defined;    
+
+  - unless it is specified with the adjective *open*:
+     
+    - :samp:`define open generic method`
+
+.. _dylan-term-sealed-constructs(sealed-domain):
+
+  *Optional sealable* language constructs are by default *open*
+  
+  - a *method* on a :ref:`generic function
+    <dylan-term-generic-function>` 
+  - a slot of a :ref:`class
+    <dylan-term-class>`
+
+  Both optional sealable language construct, 
+  :ref:`method
+  <dylan-term-method>`
+  and 
+  :ref:`slot
+  <dylan-term-slot>` 
+  of a :ref:`class
+  <dylan-term-class>`,
+  refer to sealing of a :ref:`generic function
+  <dylan-term-generic-function>` 
+   
+  - To understand this remember:
+
+    - a :ref:`slot
+      <dylan-term-slot>` in the dylan language is implemented
+      via two generic functions: 
+       
+      - a setter generic function
+      - a getter generic function
+          
+    
+  The optional sealable language construct can
+
+  - either use the adjective :samp:`sealed` 
+
+    - in the definition of a method on :ref:`generic function
+      <dylan-term-generic-function>`::
+
+         define sealed method insert (source :: list, i :: <object>)
+           => (result :: <list>)
+           ...
+         end method insert   
+         
+    - in the specification of a 
+      :ref:`slot
+      <dylan-term-slot>` 
+      in a *class* definition::
+      
+         define class <polygon>(<shape>)
+           seal slot sides :: <integer>, 
+             required-init-keyword: sides: ;
+         end class <polygon>
+
+  - or use :samp:`define sealed domain`
+
+    - to specify a sealed method::
+          
+         define method insert (source :: list, i :: <object>)
+           => (result :: <list>)
+           ...
+         end method insert
+         define sealed domain insert (<list>, <object>)
+    
+           
+    - to specify a sealed slot 
+
+.. _dylan-term-sealed-constructs(guide-to-superordinates):
+
+  Here we described the sealing adjective pair
+  
+  - *sealed* or *open*
+
+  :ref:`Sealing techniques
+  <dylan-term-sealing>`
+  guides you to the overview and to the other sealing adjective pairs:
+
+  - *abstract* or *concrete*
+  
+    - related to the :ref:`direct instance creation
+      <dylan-term-instance-creation>`
+      of a :ref:`class
+      <dylan-term-class>`
+
+  - *primary*  or *free*.
+ 
+    - related to the :ref:`multiple inheritance
+      <dylan-term-multi-inheritance>`
+      of a :ref:`class
+      <dylan-term-class>`  
