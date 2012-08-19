@@ -100,12 +100,17 @@ class
 
 .. _dylan-term-class(slot):
   
-  A *slot* of a class can either bind a *data* 
-  or a *method*, as both a :ref:`first class objects
+  A *slot* of a class can either 
+  
+  - bind a *data* or 
+  - bind a *method*, 
+
+  as both are :ref:`first class objects
   <dylan-term-first-class-object>` 
   in the dylan language.
 
-  
+.. _dylan-term-class(slot-the-sole-class-construct):
+
   What is astonishing to newcomers to the dylan language
   is
   
@@ -113,11 +118,27 @@ class
      <dylan-term-slot>`
      to build up the content of a class.
   
+.. _dylam-term-class(guide-to-subordinates):
+
+  Subordinated topics to a :ref:`class
+  <dylan-term-class>`
+  are:
+
+  - the specification of :ref:`slots
+    <dylan-term-slot>` of class.
+    
+  - the :ref:`instance creation
+    <dylan-instance-creation>`
+    of a class in case of a *abstract* or *concrete* class.
      
-  The dylan language provides :ref:`class inheritance
-  <dylan-term-class-inheritance>` 
-  and supports 
-  :ref:`multi-inheritance
-  <dylan-term-multi-inheritance>`
-  .
+  - :ref:`class inheritance
+    <dylan-term-class-inheritance>`, also known as 
+    :ref:`subclassing
+    <dylan-term-subclassing>`.
+    
+    - the dylan language supports a special form of :ref:`class inheritance
+      <dylan-term-class-inheritance>`
+     
+      - :ref:`multi-inheritance
+        <dylan-term-multi-inheritance>`.
  
