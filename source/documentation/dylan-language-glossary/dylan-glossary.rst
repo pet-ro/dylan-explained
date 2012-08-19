@@ -105,7 +105,8 @@ Note:
 .. include:: ./terms/client-server-interaction-of-modules.txt
 .. include:: ./terms/compilation-unit.txt
 .. include:: ./terms/definition.txt
-.. include:: ./terms/sealing.txt
+.. include:: ./terms/sealing-techniques.txt
+.. include:: ./terms/sealed-constructs.txt
 
 
 
