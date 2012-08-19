@@ -9,7 +9,31 @@
 
 sealed constructs
 -----------------
+  
+  A :ref:`sealed
+  <dylan-term-sealed>` language construct either 
+  
+  - disallows the external use of the content of :ref:`library
+    <dylan-term-library>` or a :ref:`module
+    <dylan-term-module>`  or
+  
+  - disallows changes to its language construct 
+    through the content of an external :ref:`library
+    <dylan-term-library>`
+    
+    - in case of a :ref:`class
+      <dylan-term-class>`
+      as language construct: *no direct subclassing*.
+    - in case of a :ref:`generic function
+      <dylan-term-generic-function>`
+      as language construct: *no methods can be add*.
 
+    - portion of a :ref:`generic function
+      <dylan-term-generic-function>` can be sealed, too.
+      See :ref:`below
+      <dylan-term-sealed-constructs(sealed-domain)>`.
+
+  
   A :ref:`sealed
   <dylan-term-sealed>` language construct either 
   :ref:`disallows external use
@@ -22,7 +46,7 @@ sealed constructs
   which contains the *sealed* language construct.
 
 
-.. _dylan-term-sealed-constructs(disallows-external-use):
+.. _dylan-term-sealed-constructs(sealed-by-default-library-and-module):
 
   *By default sealed* dylan language constructs are
    
@@ -41,7 +65,7 @@ sealed constructs
 
 
   
-.. _dylan-term-sealed-constructs(disallows-external-changes):
+.. _dylan-term-sealed-constructs(sealed-by-default-class-and-generic-function):
 
   *Other by default sealed* dylan language constructs are
 
