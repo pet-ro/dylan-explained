@@ -1,0 +1,35 @@
+.. About this file
+  - contains one (!) glossary entry in the ReSTructed format  
+  - the glossary entry will be fetched by a `include` 
+    directive of Sphinx.
+  write 0 whitespaces in front of the label
+  write 2 whitespaces infront of description.
+
+.. _dylan-term-function:
+
+
+function
+--------
+
+  In the dylan language functions can be used as basic building blocks that
+  enable abstraction, as functions themselvses can be arguments to other
+  functions:
+
+  - functions are :ref:`first-class objects`
+    <dylan-term-first-class-object>` 
+    in the dylan language.
+
+  Functions that take functions as argument are called 
+  :ref:`higher-order functions
+  <dylan-term-higher-order-function>`.
+
+ Whenever we identify a commonly occurring piece of code, 
+ 
+ - we encapsulate it as a function and
+ - abstract over differences by turning these into a function argument (???)
+  
+    
+
+
+
+ 

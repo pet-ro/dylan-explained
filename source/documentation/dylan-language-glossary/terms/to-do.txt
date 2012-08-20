@@ -1,0 +1,24 @@
+.. About this file
+  - contains one (!) glossary entry in the ReSTructed format  
+  - the glossary entry will be fetched by a `include` 
+    directive of Sphinx.
+  write 0 whitespaces in front of the label
+  write 2 whitespaces infront of description.
+
+_to-do:
+
+To do
+-----
+
+_to-do-first-class-generic-function:
+
+  - Does dylan provide first-class generic functions 
+    as described in :ref:`first-class-citiziens of a language
+    <dylan-term-first-class-citiziens>? 
+
+
+
+  fold on list
+  fold on trees
+  
+ 

@@ -5,7 +5,78 @@
   write 0 whitespaces in front of the label
   write 2 whitespaces infront of description.
 
-first-class object
-  **a to do**.
+_dylan-term-first-class-citizien:
 
+_dylan-term-first-class-object:
+
+
+first-class object / first-class citizien
+---_--------------------------------------
+
+
+_dylan-term-first-class-object(first-class-questions):
+
+  An entity for which all of the following three questions are possible
+  is called a **first-class citizen** of that language. 
+  
+  - Which entities can be named in a definition and then referred 
+    to by that given name?
+  - Which entities can be supplied as argument?
+  - Which entities can be used *anonymously*, in the from of an expression, 
+    as argument?
+  
+  Many publication used also the term **first-class object**.
+  As a first-class citizien is an object. The adjective *first-class*
+  emphasizes that the object 
+  
+  -  may be stored in a variable or datastructure
+  -  may be passed as an argument to a function, and 
+  -  may be returned as the value of a function
  
+  We will use both terms as synoym for the other and
+  choose dependent on the context one.
+  
+  - *Object* is more implemention oriented
+  - *Citizien* is more language oriented
+
+_dylan-term-first-class-object(guide-to-subordinates):
+
+  Examples of first-class citiziens in language
+ 
+  - :ref:`functions
+    <dylan-term-function>  
+    as first-class citiziens of the language
+
+    - Functions can take a function as argument.
+  
+    - The dylan language supports them
+
+  - :ref:`generic-functions
+    <dylan-term--generic-function>  
+    as first-class citiziens of the language
+ 
+   
+    - generic functions can take a generic functions as argument.
+
+      - A language that supports first-class generic functions
+        can be used to implement basic combinators that take
+        generic functions as argument.
+    
+      - :ref:`Supported by the dylan language?
+        <to-do-first-class-generic-function>`
+
+  The client of a first-class function is called a 
+  higher-order function.
+
+  - A higher-order function takes a first-class function
+    as argument.
+
+  A note about the distinction between the higher-order
+  and first-class function:
+
+  -  *first-class* is a computer science term that describes
+     programming language entities that have no restriction on their use
+     (see :re:`first-class questions above
+     <dylan-term-first-class-object(first-class-questions)>`).
+  -  *higher-order* describes a mathematical concept of functions
+     that operate on other functions, while
