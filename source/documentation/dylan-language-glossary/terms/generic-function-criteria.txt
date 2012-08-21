@@ -1,0 +1,73 @@
+.. About this file
+  - contains one (!) glossary entry in the ReSTructed format  
+  - the glossary entry will be fetched by a `include` 
+    directive of Sphinx.
+  write 0 whitespaces in front of the label
+  write 2 whitespaces infront of description.
+
+
+.. _[Alex Gerdes (2007)]: http://www.haksell.org/wp-content/uploads/masterthesis.pdf
+
+
+
+.. _dylan-term-generic-function-criteria:
+
+
+
+
+generic-function-criteria
+-------------------------
+
+
+    The masterthesis *Comparing generic libraries* by [Alex Gerdes (2007)]_
+    list several criteria for generic function systems.
+
+    - **A to do**-
+
+      - which criteria are full-filled by the dylan language
+
+.. _dylan-term-generic-function(expressiveness):
+
+  The dylan language support with its *generic functions*:
+
+  - full reflexivity:
+   
+    - As a *generic function* can be used on *any* :ref:`type
+      <dylan-term-type>` of the dylan language.
+
+  - multiple arites
+  
+    - The arity of a *generic function* is the number of active type 
+      arguments.  
+
+
+  **to-do* Back these expressiveness criteria 
+  for the generic approach in the dylan language
+  with code examples.
+
+
+  - first-class generic functions
+
+    -  A generic function can take a generic function as an
+       argument in the dylan language.  
+    
+    - This expressiveness allow to implement basic combinators that
+      take generic function arguments.
+
+
+  - extensibility
+
+     - A programmer can extend the definition of a generic function in a
+       different module without the need for recompilation.
+
+
+  - multi type arguments
+
+    - A *generic programming* language can be *generic* in more than one
+      type argument, if the language is able to define a generic
+      *transponse* function. ::
+     
+         transpone :: d (e a ) -> Maybe e (d a)
+
+  
+

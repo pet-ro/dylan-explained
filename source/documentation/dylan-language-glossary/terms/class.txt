@@ -10,12 +10,17 @@ class
 -----
 
 
-  :samp:`define class` is a :ref:`definition
+  :samp:`define class` introduces in the dylan language the :ref:`definition
   <dylan-term-definition>` 
-  of the dylan language.  
+  of *class*.  
+
+.. _dylan-term-class(views):
   
-  Knowledge of several concepts provide a better understanding 
-  of the dylan language construct *class*:
+  
+  A better understanding 
+  of the dylan language construct *class* provide
+  these possible views on a *class* from different
+  perspectives:
 
   - Related to the core concept :ref:`binding
     <dylan-term-binding>` 

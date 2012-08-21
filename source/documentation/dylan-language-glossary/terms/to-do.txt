@@ -20,6 +20,8 @@ _to_do-slot-using
 
   - slot using
 
- 
-  
+_to_do-generic-programming
+
+  - Revise the section :ref:`related-topics
+    <dylan-term-generic-programming(related-topics)>`.
  

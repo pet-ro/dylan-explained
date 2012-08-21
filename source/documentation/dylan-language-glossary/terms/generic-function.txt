@@ -11,12 +11,26 @@
 generic-function
 ----------------
 
+
+.. _dylan-term-generic-function(anguage-construct):
+
+  :samp:`define generic method` introduces in the dylan language
+  the :ref:`definiton
+  <dylan-term-definition>`
+  of a *generic function*.
+
+
+.. _dylan-term-generic-function(definition:
+
   A :ref:`function
   <dylan-term-function>`
   that works for many :ref:`types`
   <dylan-term-type>` 
   and on the *structure of data type* 
   is called a *generic function*.
+
+
+.. _dylan-term-generic-function(method-dispatch):
 
   *Generic functions* in concert with the types of the used arguments
   determine the behaviour of object in the dylan lanuage:
@@ -27,4 +41,14 @@ generic-function
     
     - This process is called :ref:`multi-dispatch
       <dylan-term-method-dispatch>`
+
+
+.. _dylan-term-generic-function(related-topics):
+
+
+  Related topics:
+
+  - :ref:`Generic function criteria
+    <dylan-term-generic-function-criteria>`
+  
 
