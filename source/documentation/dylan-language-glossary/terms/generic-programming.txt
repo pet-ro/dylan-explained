@@ -10,10 +10,10 @@
 Generic programming
 -------------------
 
-  Two styles of *generic programming*:
+  Two styles of *generic programming* exist:
 
-  - :ref:`gradual lifting of concrete algorithms
-    <dylan-term-generic-programming(gradual-lifting-of-concrete-algorithms)>` 
+  - *gradual lifting of concrete algorithms*
+    also know as  *concept analysis* 
   - :ref:`datatype generic programming
     <dylan-term-generic-programming(datatype-generic-programming)>`
 
@@ -24,12 +24,16 @@ Generic programming
   :ref:`top-down design
   <dylan-term-top-down-development>`.
 
-  The bottom-up side of generic programming is that it challenges programmers 
+.. _dylan-term-generic-programming(opposition-of-styles-explained):
+ 
+  The *bottom-up side* of *generic programming* is that 
+  it challenges programmers 
   - to find *generic* components,
   - strip them of irrelevant details and
   - write a generic function.
   
-  The top-down side of generic programming is that it allows the programmer to
+  The *top-down side* of *generic programming* is that 
+  it allows the programmer to
   abstract over the *structure* of a type by
   
   - developing functions that work for a range of types
@@ -37,8 +41,10 @@ Generic programming
     of :ref:`general instances
     <dylan-term-instance-terms>`,
     instead of writing new code for every single instance.
+
+.. _dylan-term-generic-programming(styles-and-their-names):
  
-  The bottom-up side of generic programming is known as
+  The *bottom-up side* of *generic programming* is known as
   
   - **Concept analysis** .
  
@@ -47,7 +53,7 @@ Generic programming
       <dylan-term-functor>`
       that capture common structures.
 
-  The top-down side of generic programming is knowns as
+  The *top-down side* of *generic programming* is knowns as
 
   - **Datatype generic programming**
 
@@ -56,10 +62,9 @@ Generic programming
       of *generic programs*.
 
 
-
 .. _dylan-term-generic-programming(summary):
 
-  To summarize, the generic programming methodology always consists 
+  To summarize:  the *generic programming* methodology always consists 
   of the following steps: 
   
   - identify a family of useful and efficient concrete algorithms 
@@ -67,13 +72,11 @@ Generic programming
   - resolve the differences by forming higher-level abstractions, and 
   - lift the concrete algorithms so they operate on these new abstractions. 
   - When applicable, there is a fourth step to implement 
-    automatic selection of the best algorithm
-
-  
+    automatic selection of the best algorithm.
 
 .. _dylan-term-generic-programming(guide-to-subordinates):
 
-.. _dylan-term-generic-programming(datatype-generic-programming):
+.. _dylan-term-generic-programming(related-topics):
 
    Related topics:
 

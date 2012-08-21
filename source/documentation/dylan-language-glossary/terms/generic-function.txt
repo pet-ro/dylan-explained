@@ -1,0 +1,30 @@
+.. About this file
+  - contains one (!) glossary entry in the ReSTructed format  
+  - the glossary entry will be fetched by a `include` 
+    directive of Sphinx.
+  write 0 whitespaces in front of the label
+  write 2 whitespaces infront of description.
+
+.. _dylan-term-generic-function:
+
+
+generic-function
+----------------
+
+  A :ref:`function
+  <dylan-term-function>`
+  that works for many :ref:`types`
+  <dylan-term-type>` 
+  and on the *structure of data type* 
+  is called a *generic function*.
+
+  *Generic functions* in concert with the types of the used arguments
+  determine the behaviour of object in the dylan lanuage:
+
+  - When an *object* is passed as an argument to a *generic function*,
+    the *generic function* looks at the type of the object
+    to determine which method should be run. 
+    
+    - This process is called :ref:`multi-dispatch
+      <dylan-term-method-dispatch>`
+

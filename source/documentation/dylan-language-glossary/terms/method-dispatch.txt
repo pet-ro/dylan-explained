@@ -8,6 +8,11 @@
 .. dylan-term-method-dispatch:
 
 method dispatch
-  **a to do**
+---------------
+
+  The procss of determining which method to call when a 
+  :ref:`generic function
+  <dylan-term-generic-funtion>`
+  is applied to arguments.
 
     

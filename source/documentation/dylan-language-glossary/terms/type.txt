@@ -1,0 +1,37 @@
+.. About this file
+  - contains one (!) glossary entry in the ReSTructed format  
+  - the glossary entry will be fetched by a `include` 
+    directive of Sphinx.
+  write 0 whitespaces in front of the label
+  write 2 whitespaces infront of description.
+
+.. _dylan-term-type:
+
+
+type
+----
+
+  The dylan language supports the type
+
+  - :ref:`class
+    <dylan-term-class>`
+
+  and several non-class types:
+
+  - :ref:`singleton
+    <dylan-term-singleton>`
+
+  - :ref:`union
+    <dylan-term-union>`
+
+  - :ref:`limited types
+    <dylan-term-limited-type>`
+ 
+
+  All *types* are :ref:`first-class objects
+  <dylan-term-first-class-object>` and are
+  general instances of the class *<type>*.
+
+  Implementations may add additional kinds of types, but the
+  language specification does not define any way for the 
+  programmer to define new subclasses of *<types>*.  

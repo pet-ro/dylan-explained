@@ -16,9 +16,10 @@ _to-do-first-class-generic-function:
     as described in :ref:`first-class-citiziens of a language
     <dylan-term-first-class-citiziens>? 
 
+_to_do-slot-using
 
+  - slot using
 
-  fold on list
-  fold on trees
+ 
   
  
