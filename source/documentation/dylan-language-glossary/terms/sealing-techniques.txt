@@ -32,18 +32,30 @@ sealing techniques
   - :ref:`sealed
     <dylan-term-sealed-constructs>`
     or 
-    *open*.
+    *open* 
+   
+    - The adjective pair relates to the dylan language constructs:
+      class, slot, generic function,  method. 
+    
+    -  Libraries and modules are sealed be default,
+       but can export their content to be open for
+       clients. 
 
   - :ref:`abstract
-    <dylan-term-abstract-class>` 
+    <dylan-term-class(abstract-concrete)>` 
     or
-    :ref:`concrete
-    <dylan-term-concrete-class>`
+    :ref:`concrete class
+    <dylan-term-class(abstract-concrete)>`
+
+  - :ref:`instantiable
+    <dylan-term-class(instantiable-uninstantiable)>`
+    or :ref:`uninstantiable class
+    <dylan-term-class(instantiable-uninstantiable)>`
 
   - :ref:`primary
     <dylan-term-primary-class>`
     or
-    :ref:`free
+    :ref:`free class
     <dylan-term-free-class>`
 
 .. _dylan-term-sealing(detailed):

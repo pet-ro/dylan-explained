@@ -14,12 +14,14 @@ type
   The dylan language supports the type
 
   - :ref:`class
-    <dylan-term-class>`
+    <dylan-term-class>`   
 
-  and several non-class types:
+  A special class with one indivual object:
 
   - :ref:`singleton
     <dylan-term-singleton>`
+
+  and several non-class types:
 
   - :ref:`union
     <dylan-term-union>`

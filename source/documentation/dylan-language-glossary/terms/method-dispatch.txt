@@ -10,9 +10,12 @@
 method dispatch
 ---------------
 
-  The procss of determining which method to call when a 
+  The process of determining which method to call when a 
   :ref:`generic function
   <dylan-term-generic-funtion>`
-  is applied to arguments.
+  is applied to arguments. 
+  Based on the run time (dynamic) type of its arguments
+  (one or more) the process dynamically dispatchs to the 
+  apropriate method.
 
     

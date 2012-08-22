@@ -12,25 +12,22 @@ class
 
   :samp:`define class` introduces in the dylan language the :ref:`definition
   <dylan-term-definition>` 
-  of *class*.  
+  of a *class*.  
 
 .. _dylan-term-class(views):
   
-  
-  A better understanding 
-  of the dylan language construct *class* provide
-  these possible views on a *class* from different
-  perspectives:
+  We introduce several views on a *class* from different
+  perspectives. This provides a better understanding 
+  of the dylan language construct *class*:
 
   - Related to the core concept :ref:`binding
     <dylan-term-binding>` 
     of the dylan language one  can describe a class as: 
     
     -  *grouping mechanism for* :term:`bindings 
-       <dylan-term-binding>`
-       . 
+       <dylan-term-binding>`. 
 
-  - The way of thinking about a class in the dylan language 
+  - The *class* concept in the dylan language 
     has its roots in the fields of 
     *Artificial Intelligence (AI)* and 
     *Knowledge Represenation (KR)*:
@@ -38,9 +35,7 @@ class
     - The concept of a *frame* in AI and KR is well resembled by the
       *class* concept of the dylan language:
 
-      
-
-      - What a `frame`  does in Knowledge Representation - 
+      - What a *frame*  does in Knowledge Representation - 
         containing a set of 
         :ref:`named
         <dylan-term-name>` 
@@ -48,21 +43,24 @@ class
         <dylan-term-slot>`   - 
         does represent a *class* in the dylan language. 
     
-  - The concept of :ref:`separation of concerns
+  - The *class* concept in the dylan language 
+    is a respecter of :ref:`separation of concerns
     <dylan-term-separation-of-concerns>`:
 
     - The dylan language uses a class as grouping mechanism for bindings 
-      only, and not as a construct to build up a :ref:`namespace
+      only, and *not* as a construct to build up a :ref:`namespace
       <dylan-term-namespace>` 
       or a 
       :ref:`compilation unit
       <dylan-term-compilation-unit>`
-      .  
-
+      .
+     
+      More explained in the paragraph *object model* :ref:`below 
+      <dylan-term-class(object-modell)>`
+     
   - The dylan language implements the 
     :ref:`object-oriented paradigma of programming
-    <dylan-term-object-oriented paradigma-of-programming>`
-    , 
+    <dylan-term-object-oriented-paradigma-of-programming>`, 
     but its design is *centered around methods*, 
     not centered around *classes* as it is 
     done in the current mainstream object-oriented languages. 
@@ -91,16 +89,52 @@ class
  
   - To initialise a class
    
-    - in the dylan language you will :ref:`generic
-      <dylan-term-generic>` 
-      function :samp:`initialize`, which is outside of 
+    - in the dylan language you will :ref:`generic function
+      <dylan-term-generic-function>` 
+      :samp:`initialize`, which is outside of 
       the :samp:`define class` construct.
+
+
+.. _dylan-term-class(make):
 
   - To create an instance creation of a class
 
-    - in the dylan language you will use the :ref:`generic 
-      <dylan-term-generic>` 
-      function :samp:`make`. 
+    - you will in the dylan language the *class* as first
+      argument to the :ref:`generic function
+      <dylan-term-generic-function>` 
+      :samp:`make`. The object returned by *make* is 
+      guaranteed to be a general instance of the first
+      argument to *make*, but not nessarily a direct
+      instance.
+
+
+      Notes:
+
+.. _dylan-term-class(abstract-concrete):
+
+      - A *abstract* class cannot have *direct instances*
+        as the opposite, a *concrete* class, can have.
+
+        The object that *make* returns is a *general* instance
+        of its first argument (see :ref:`above
+        <dylan-term-class(make)>`). This liberality allows
+        *make* to be called on an abstract class:
+
+	- *make* can instantiate and return a direct instance
+          of one of the concrete subclasses of the abstract
+          class.
+
+
+.. _dylan-term-class(instantiable-uninstantiable):
+
+      - Only instantiable classes can be used as first
+        argument for *make*.  
+
+	 - A class is :ref:`sealed
+           <dylan-term-sealing>` for the use as
+           first argument to *make*, when the class
+           definition uses the adjective 
+           *uninstantiable*. The default is: *instantiable*
 
 
 .. _dylan-term-class(slot):
@@ -129,21 +163,41 @@ class
   <dylan-term-class>`
   are:
 
-  - the specification of :ref:`slots
+  - The specification of :ref:`slots
     <dylan-term-slot>` of class.
     
-  - the :ref:`instance creation
-    <dylan-instance-creation>`
-    of a class in case of a *abstract* or *concrete* class.
+  - a class definition can specify adjectives to support 
+    :ref:`sealing techniques
+    <dylan-term-sealing>` related to :ref:`instance creation
+    <dylan-term-class(make)>`
+
+    - A class can be declared as *concrete*, which means that direct 
+      instance creation is allowed. 
+      Or it can be declared as *abstract*, which means that only 
+      general instance creation is allowed.
      
-  - :ref:`class inheritance
+    - A class may declare to use of the class as first argument to 
+      *make* as allowed (*instantiable* class)
+      or as disallowed (*uninstantiable* class).
+   
+      - Note: a *abstract* class can be *instantiable* by
+        *make* and will return a *general instance* of the
+        abstract class. 
+
+  - A class definition can specify adjectives to support 
+    ref:`sealing techniques
+    <dylan-term-sealing>` related to:ref:`class inheritance
     <dylan-term-class-inheritance>`, also known as 
     :ref:`subclassing
-    <dylan-term-subclassing>`.
+    <dylan-term-subclassing>`. 
+
+    -  A class might be declared *sealed* or *open*
+       for subclassing
     
-    - the dylan language supports a special form of :ref:`class inheritance
-      <dylan-term-class-inheritance>`
-     
-      - :ref:`multi-inheritance
-        <dylan-term-multi-inheritance>`.
+    The dylan language supports a special form of :ref:`class inheritance
+    <dylan-term-class-inheritance>`: :ref:`multi-inheritance
+    <dylan-term-multi-inheritance>`.
  
+    - A class might be declared *primary* or *free* for multi-inheritance.
+      Primary classes form a single inheritance chain.
+      The default is: *free* 

@@ -7,7 +7,7 @@
 
 .. _dylan-term-generic-programming:
 
-Generic programming
+generic programming
 -------------------
 
   Two styles of *generic programming* exist:
@@ -81,14 +81,14 @@ Generic programming
    Related topics:
 
    -  A fairly large class of *generic algorithms* can be defined
-   Algorithms written for those functors can then operate on any 
-   inductive datatype, and are thus inherently very *generic*. 
+      Algorithms written for those functors can then operate on any 
+      inductive datatype, and are thus inherently very *generic*. 
 
-   - The fairly large class of *generic algorithms* that can be defined 
-     by the :ref:`functors
-     <dylan-term-functor>` 
-     *sum*, *product* and *unit*: see  :ref:`functors
-     <dylan-term-functor>` 
+   -  The fairly large class of *generic algorithms* that can be defined 
+      by the :ref:`functors
+      <dylan-term-functor>` 
+      *sum*, *product* and *unit*: see  :ref:`functors
+      <dylan-term-functor>` 
 
 
   
