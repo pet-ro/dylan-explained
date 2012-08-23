@@ -1,0 +1,12 @@
+..  About this file
+    The file contains a ReST Chapter titled "Release Info: Proofreader comment"
+
+
+(pet-ro) comments v00.1.0        
+--------------------------
+
+* first comment
+
+
+
+
