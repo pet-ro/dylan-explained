@@ -7,49 +7,98 @@
 
 .. _dylan-term-about-software-development:
 
-Abouut software development
+about software development
 ---------------------------
 
   One of the most ubiquitous activities in software development is
   
-- *structuring data*. 
+  - *structuring data*
 
-  Once the structure of the data has been decided on,  a programmer
+  Once the structure of the data has been decided on, a programmer
   adds
  
-  - *functionality* to the datatypes
+  - *functionality to the datatypes*
 
-  Part of the reason that the datatype is typically designed in the first
-  place is, that always some functionality is specific to a datatype.
+.. _dylan-term-about-software-development(structuring-data):
+    
+  *Structuring data* is supported in the dylan language by
+  several :ref:`built-in classes
+  <dylan-term-classes-built-in>`.
+
+  -  The class <object> is the root class of all built-in
+     classes in the dylan language. 
+
+  -  For structuring data the class hierarchy of the dylan language 
+     can be expended. 
+
+  -  The dylan language implements the 
+     :ref:`object-oriented paradigma of programming
+     <dylan-term-object-oriented-paradigma-of-programming>`, 
+     
+     -  The design of the dylan language is *centered around methods*, 
+
+        -  A *method* is defined outside of classes.
 
 
-  The most important features that support these activities are
+        Note: The current mainstream object-oriented languages use an
+        object-oriented approach which is centered around *classes*:
+
+
+.. _dylan-term-about-software-development(functionality-to-datatypes):
+
+  Several language features of the dylan language
+  support *functionality to the datatypes*:
  
-  - a types system equipped with parametric polymorphism
-
-  - higher-order functions
-
-
-  The dylan language design is *centered around methods*,
-  not around *classes*. These enables dylan to provide
-  a central feature for *generic programming*:
-
+  -  As the language is *centered around methods*:
+     not centered around *classes*.
   
+     -  A *method* is a specific sequence of code.
+     -  A *method* can be specific for a tuple of
+        datatypes.
 
-  The dylan language supports parametric polymorphism by writing
-  *generic functions* for types classes.
+  -  A central feature for :ref:`generic programming
+     <dylan-term-generic-programming>` is provided
+     by the dylan language:
 
-  Classic examples of such generic functionality are
+     - :ref:`generic functions
+       <dylan-term-generic-function>`
 
-  - getter generic function of a slot
-  - setter generic function of a slot
+     The dynamic dispatching at runtime from a generic method
+     to a specific method is allowed to depend on one or more
+     types ( :ref:`multiple dispatch
+     <dylan-term-multiple-dispatch>` ). 
 
-  The dylan language implements the 
-  :ref:`object-oriented paradigma of programming
-  <dylan-term-object-oriented-paradigma-of-programming>`, 
-  but its design is *centered around methods*, 
-  not centered around *classes* as it is 
-  done in the current mainstream object-oriented languages. 
+     - Only a small number of language support :ref:`multiple dispatch
+       <dylan-term-multiple-dispatch>`. Beyond the dylan language
+       *Lisp* language support this. 
+
+     - Most obejct-oriented languages have approch which is centered
+       around *classes*. Most of these language provide single dispatch
+       only, as  it difficult to adapt an classes-centered approach 
+       to multiple dispatching.
+
+     - The dylan language can use a tuple of arguments in place of a single
+       argument to dispatch at runtime. 
+   
+
+  The dylan language combines *structuring data* and 
+  *functionality of datatypes* well with its 
+  *generic functions*:
+
+  - The behavior of functions in the dylan language can depend on the
+    multi datatypes of the function arguments. 
+
+  - The behavior of functions in the dylan language can depend on the
+    class hierarchy of each used datatypes which is a function arguments. 
+  
+  This enables to abstract functionality well. Other dylan language
+  features that support generic programming well are:
+  
+  - :ref:`higher-order functions
+    <dylan-term-higher-order-functions>`
+
+  - a type sytem which allows :ref:`polymorphism
+    dylan-term-polymorphism>`.
 
 
 

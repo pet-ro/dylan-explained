@@ -1,0 +1,43 @@
+.. About this file
+  - contains one (!) glossary entry in the ReSTructed format  
+  - the glossary entry will be fetched by a `include` 
+    directive of Sphinx.
+  write 0 whitespaces in front of the label
+  write 2 whitespaces infront of description.
+
+.. _dylanwork-about-the-compiler:
+
+
+the compiler
+------------
+  
+  The compiler described here is **Open Dylan**, formerly named Dylan- 
+  Works and Functional Developer. 
+
+  - the compiler was originally developed at Harlequin 
+    as *DylanWork*, 
+  - later Functional Objects took it over and named the compiler
+    *Functional Developer*, 
+  - since March 2004 the compiler is open source and got named
+    *Open Dylan*
+
+.. _dylanwork-the-compiler(focus):
+
+  Harlequin's DylanWork consists of a Compiler and IDE.
+  We will focus here on the compiler.
+
+.. _dylanwork-the-compiler:
+
+  We use here the phrase **the dylanwork compiler** as a reminiscence to
+  its main contributor Harlequin. 
+  
+  This naming convention is also used in a Diploma Thesis related to
+  OpenDylan: [Diploma Thesis Mehnert (2009)]_
+  
+
+  Check for correctness:
+
+  - The opens source has aDual-License: LGPL and Functional Objects
+    Library Public License Version 1.
+
+

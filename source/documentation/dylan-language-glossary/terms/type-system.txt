@@ -1,0 +1,20 @@
+.. About this file
+  - contains one (!) glossary entry in the ReSTructed format  
+  - the glossary entry will be fetched by a `include` 
+    directive of Sphinx.
+  write 0 whitespaces in front of the label
+  write 2 whitespaces infront of description.
+
+.. _dylan-term-type-system:
+
+
+type system
+-----------
+
+  The dylan language is object-oriented and has a nominal type system:
+
+  - class inheritance is declared explicitly
+
+  In a nominal type system a developer explicitly writes down superclasses
+  of a given class. This defines the subtype relation of classes. 
+  A structural type system is capable to look at the structure of types.

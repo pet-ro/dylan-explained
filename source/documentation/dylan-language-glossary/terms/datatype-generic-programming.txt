@@ -11,7 +11,7 @@ Datatype-generic programming
 ---------------------------
 
   Datatype-generic programming enables abstraction
-  by allowing the behaviour of functions to depend on type arguments.
+  by allowing the behaviour of functions to depend on type arguments.w
   Such function are :ref:`generic functions
   <dylan-term-generic-function>`.
 

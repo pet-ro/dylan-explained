@@ -99,13 +99,18 @@ Note:
 .. _History of Dylan Programming Language@wikipedia: http://en.wikipedia.org/wiki/History_of_the_Dylan_programming_language 
 
 .. include:: ./terms/about-dylan.txt
+.. include:: ./terms/about-software-development.txt
 .. include:: ./terms/binding.txt
 .. include:: ./terms/binding-sharing.txt
 .. include:: ./terms/class.txt
+.. include:: ./terms/classes-built-in.txt
 .. include:: ./terms/client-server-interaction-of-modules.txt
 .. include:: ./terms/compilation-unit.txt
 .. include:: ./terms/definition.txt
+.. include:: ./terms/first-class-object.txt
+.. include:: ./terms/function.txt
 .. include:: ./terms/generic-programming.txt
+.. include:: ./terms/module.txt
 .. include:: ./terms/sealing-techniques.txt
 .. include:: ./terms/sealed-constructs.txt
 

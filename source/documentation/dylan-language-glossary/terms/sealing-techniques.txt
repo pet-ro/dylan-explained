@@ -31,7 +31,7 @@ sealing techniques
 
   - :ref:`sealed
     <dylan-term-sealed-constructs>`
-    or 
+    versus 
     *open* 
    
     - The adjective pair relates to the dylan language constructs:
@@ -41,16 +41,34 @@ sealing techniques
        but can export their content to be open for
        clients. 
 
+    - The *adjective pair* reflects a sealing technique which 
+      is based on whether a :ref:`compilation unit
+      <dylan-term-compilation-unit>` is sealed.
+      See :ref:`sealed language constructs
+      <dylan-term-sealed-constructs>`
+
   - :ref:`abstract
     <dylan-term-class(abstract-concrete)>` 
-    or
+    versus
     :ref:`concrete class
     <dylan-term-class(abstract-concrete)>`
-
+    and
   - :ref:`instantiable
     <dylan-term-class(instantiable-uninstantiable)>`
-    or :ref:`uninstantiable class
+    versus :ref:`uninstantiable class
     <dylan-term-class(instantiable-uninstantiable)>`
+
+    - These two adjective pairs reflect sealing techniques which 
+      are based on whether a :ref:`class
+      <dylan-term-class>`
+      can have direct 
+      :ref:`instance creation
+      <dylan-term-instance-creation>`.
+
+      - Note: An abstract class can be instantiable. In this case the
+        :ref:`constructor function
+        <dylan-term-constructor-function-make>`
+        *make* returns an instance of one of its subclasses.
 
   - :ref:`primary
     <dylan-term-primary-class>`
@@ -58,60 +76,12 @@ sealing techniques
     :ref:`free class
     <dylan-term-free-class>`
 
-.. _dylan-term-sealing(detailed):
+    - The adjective pair reflects a sealing technique which 
+      is based on how a class can be used for multiple inheritance. 
+   
 
-  The adjective pairs and their sealing techique described more detailed:
-
-.. _dylan-term-sealing(detailed-adjective-pair-sealed-or-open):
-
-  - The adjective pair
-    :ref:`sealed
-    <dylan-term-sealed-constructs>`
-    or 
-    *open*.
-
-  
-
-    - The *adjective pair* reflects a sealing technique which 
-      is based on whether a :ref:`compilation unit
-      <dylan-term-compilation-unit>` is sealed.
-
-      - See :ref:`sealed language constructs
-        <dylan-term-sealed-constructs>`
       
 
 
-.. _dylan-term-sealing(detailed-adjective-pair-abstract-or-concrete):
-    
-  - The adjective pair
-    :ref:`abstract
-    <dylan-term-abstract-class>` 
-    or
-    :ref:`concrete
-    <dylan-term-concrete-class>`
-   
-    - This adjective pair reflects a sealing technique which 
-      is based on whether a :ref:`class
-      <dylan-term-class>`
-      can have direct 
-      :ref:`instance creation
-      <dylan-term-instance-creation>`.
-
-
-.. _dylan-term-sealing(detailed-adjective-pair-primary--or-free):
-
-  - The adjective pair 
-    :ref:`primary
-    <dylan-term-primary-class>`
-    or
-    :ref:`free
-    <dylan-term-free-class>`
-
-    - The adjective pair reflects a sealing technique which 
-      is based on how a :ref:`class
-      <dylan-term-class>` 
-      can be used for 
-      :ref:`multiple inheritance
-      <dylan-term-multiple-inheritance>`.
    
 

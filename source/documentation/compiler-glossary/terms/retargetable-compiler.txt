@@ -1,0 +1,21 @@
+.. About this file
+  - contains one (!) glossary entry in the ReSTructed format  
+  - the glossary entry will be fetched by a `include` 
+    directive of Sphinx.
+  write 0 whitespaces in front of the label
+  write 2 whitespaces infront of description.
+
+.. _compiler-term-retargetable-compiler:
+
+retargetable compiler
+---------------------
+ 
+[Book: Crafting a Compiler with C] defines:
+   
+
+  A retargetable comipler is one whose target machine can be changed without
+  rewriting its machine-independent components. A retargetable compiler 
+  is more difficult to write than an ordinary because target machine 
+  dependencies must be carefully localized. 
+
+  

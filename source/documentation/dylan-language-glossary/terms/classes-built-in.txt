@@ -1,0 +1,81 @@
+.. About this file
+  - contains one (!) glossary entry in the ReSTructed format  
+  - the glossary entry will be fetched by a `include` 
+    directive of Sphinx.
+  write 0 whitespaces in front of the label
+  write 2 whitespaces infront of description.
+
+.. _dylan-term-classes-built-in:
+
+classes, built-in
+------------------
+
+  The Dylan Reference Manual specifies several predefined
+  classes to structure data. Those built-in classes are
+  group to aggregates:  
+
+.. _dylan-term-classes-built-in(aggregate):
+  
+ An *aggregate* is a cluster of associated classes that
+  the dylan language treats as a unit. A dylan language
+  implementation has to provides several built-in classes.
+
+.. _dylan-term-classes-built-in(each-aggregate): 
+ 
+  Typically each aggregate has a abstract class which binds 
+  to the general root *<object>*. Such an abstract class has 
+  the role of port between <object> and the cluster of associated
+  obejcts. 
+
+.. _dylan-term-classes-built-in(list-of-aggregates-with-port-role):
+
+  In the dylan language the following abstract classes have this role.
+  We list them with their :ref:`sealing adjectives
+  <dylan-term-sealing>`:
+
+  - <type> sealed, free, abstract, uninstantiable
+    
+    - see: :drm:`Type Classes @ DRM
+      <Type_Classes>`
+    
+  - <number> open, free, abstract, uninstantiable
+   
+    - see: :drm:`Number Classes @ DRM
+      <Number_Classes>`
+
+  - <collection> open, free, abstract, uninstantiable
+
+    - see: :drm:`Collection Classes @ DRM
+      <Collection_Classes>`
+
+  - <function> sealed, free, abstract, uninstantiable
+
+    - see: :drm:`Function Classes @ DRM
+      <Function_Classes>`
+
+  - <condition> open, free, abstract, uninstantiable
+
+    - see :drm:`Conditions Classes @ DRM
+      <Conditon_Classes>`
+
+
+.. _dylan-term-classes-built-in(aggregate-without-a-port):
+
+  In the Dylan Reference Manual another cluster of classes exists
+  which is named *Simple Objects*. These are the basic classes 
+  nessary to bootstrip a compiler:
+  
+  - The *<boolean>* class represents the literal for true and false:
+    #t and #f.   (logical literals)
+  
+  - The <character> class to represent character literals.
+
+  - The <symbol> class 
+
+  See also: :drm:`Simple Object Classes @ DRM
+  <Simple_Object_Classes>`.
+
+
+
+
+  

@@ -3,8 +3,8 @@ Version tagged as v00.7.1
 =========================
 
 
-Meilstones to be reached by v00.7.1
+Milestones to be reached by v00.7.1
 -----------------------------------
 
 
-- 
+- *to do*

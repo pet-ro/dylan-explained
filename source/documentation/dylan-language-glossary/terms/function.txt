@@ -11,22 +11,26 @@
 function
 --------
 
-  In the dylan language functions can be used as basic building blocks that
-  enable abstraction, as functions themselvses can be arguments to other
+  In the dylan language functions can be used as basic *building blocks* that
+  enable abstraction.  A function is a package of functionality 
+  (*building block*). Its functionality can be abstracted over serveral
+  classes
+  provides functions themselvses can be arguments to other
   functions:
 
-  - functions are :ref:`first-class objects`
-    <dylan-term-first-class-object>` 
-    in the dylan language.
+  Functions are in the dylan language subclass for the root *<object>*.
+  :ref:`first-class objects
+  <dylan-term-first-class-object>` 
+  in the dylan language. Their root object is <object>
 
   Functions that take functions as argument are called 
   :ref:`higher-order functions
   <dylan-term-higher-order-function>`.
 
- Whenever we identify a commonly occurring piece of code, 
+  Whenever we identify a commonly occurring piece of code, 
  
- - we encapsulate it as a function and
- - abstract over differences by turning these into a function argument (???)
+  - we encapsulate it as a function and
+  - abstract over differences by turning these into a function argument (???)
   
     
 

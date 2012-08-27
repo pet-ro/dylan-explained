@@ -8,55 +8,79 @@
 .. _dylan-term-definition:
 
 definition
-----------
-  Definitions are a dylan language construct to create 
-  :ref:`bindings<dylan-term-binding>`. 
- 
-  The dylan language provides several build-in definitions:
- 
-  - :samp:`define constant`, 
-  - :samp:`define method`.
-  - :samp:`define class`,
-  - :samp:`define module`, and
-  - :samp:`define library`.
-  
+------------
 
-  The last two definitions (
-  :ref:`module
-  <dylan-term-module>`
-  , 
-  :ref:`library
-  <dylan-term-library>`
-  ) 
-  are the dylan language constructs to build up 
-  :ref:`hierarchical modularity
-  <dylan-term-hierarchical-modularity>`.
+
+  Definitions are dylan language constructs:
+
+..  _dylan-term-definition(language-construct-to-build-modularity):
+
+  - to build up  
+    :ref:`hierarchical modularity
+    <dylan-term-hierarchical-modularity>`.
+
+    - :samp:`define library`
+    - :samp:`define module`
+
+    These two definitions provides the dylan language to support
+    :ref:`hierarchical modularity
+    <dylan-term-hierarchical-modularity>`. 
+    
+    A  :ref:`library
+    <dylan-term-library>`
+    definition and its :ref:`modules
+    <dylan-term-module>`
+    must be written to a special module
+    called *dylan-user*, which each implementation of the dylan
+    language provides.
+  
+ ..  _dylam-term-definition(language-constructs-to-create-a-binding):
  
+  - to create :ref:`bindings<dylan-term-binding>`
+
+    A definiton which creates a binding must be a top-level language
+    construct of a  
+    :ref:`module
+    <dylan-term-module>`. This means:
+  
+    - A binding creating definition can't be embedded into
+      an other definitions.
+    
+    Such a definiton could represent  constant or variable
+    :ref:`bindings
+    <dylan-term-binding>` .
+
+ ..  _dylam-term-definition(language-constructs-to-create-a-constant-binding):
+  
+    These definitions define and initializes a *constant* 
+    binding in the current module
+  
+    - :samp:`define constant` ,    
+    - :samp:`define class` ,
+    - :samp:`define method` .
+
 .. _dylan-term-definition(macro): 
-  A special definition is :samp:`define macro`, which allows to 
-  author a *domain specific language (DSL)*.
 
-.. _dylan-term-definition(built-in-constant):
+    A special definition which create aconstant binding in the current module
+    is :samp:`define macro`, which allows to 
+    author a *domain specific language (DSL)*.
 
-  All the definitions  listed here so far 
-  are *constant* built-in definitions. 
 
-.. _dylan-term-definition(built-in-variable):
+..  _dylam-term-definition(language-constructs-to-create-a-variable-binding):
 
-  Other definitions 
-  may be *variable* built-in definitions:
-  
-  - Variable built-in definitions are for example: 
+    *Variable* bindings in the current module are created
+    by those definitions:
     
     - :samp:`define variable` and
     - :samp:`define generic method`.
-  
-    The last definition is essential for a mechanism called
+       
+    The last  definition is essential for a mechanism called
     :ref:`method dispatch
-    <dylan-term-method-dispatch>`, 
-    which the dylan language provides. 
+    <dylan-term-generic-programming>`.
+    It initializes a new :ref`generic function
+    <dylan-term-generic-function>`. 
 
-.. _dylan-term-defintion(links-to-details):
+..  _dylan-term-defintion(links-to-details):
  
   Details for each definition are given in the related entries 
   in the `Dylan Reference Manaual (DRM)` or in the related glossary

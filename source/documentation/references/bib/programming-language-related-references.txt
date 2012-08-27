@@ -1,0 +1,29 @@
+..  About this file
+    The file contains a list of references 
+    The file is used by an ReST include directive
+    of a Chapter titled "References"
+
+
+
+    Note:
+
+    - Article: use as reference key the author and the year
+    - Book: Book: Title
+
+
+.. [Book: Concepts, Techniques, and Models of Computer Programming (2004)]
+   *Concepts, Techniques, and Models of Computer Programming* (2004)
+   authored by Peter Van Roy (Department of Computer Science and
+   Enginering at Universite de Louvain, Belgium)
+   and 
+   Seif Haridi (Department of Microelectronics and Information Technology
+   at the Royal Institute of Schweden). Published by The MIT Press in 2004.
+
+.. [Book: The Functional Approach to Programming (1998)] *The Functional 
+   Approach to Programming* (1998)
+   authored by Guy Cousineau (Ecole Normale Supererieure - Paris) 
+   and
+   Michel Mauny  (INRIA French National Institut for Research in 
+   Computer Science and Automation). 
+   English edition
+   published in 1999 by *Cambridge University Press*. French edition 1995.

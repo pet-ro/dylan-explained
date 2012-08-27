@@ -1,0 +1,22 @@
+.. About this file
+  - contains one (!) glossary entry in the ReSTructed format  
+  - the glossary entry will be fetched by a `include` 
+    directive of Sphinx.
+  write 0 whitespaces in front of the label
+  write 2 whitespaces infront of description.
+
+.. _used-references-for-dylan-language-glossary              :
+
+Used references during writing the dylan language glossary
+==========================================================
+
+Book: The Functional Approach to Programming (1998)
+---------------------------------------------------
+
+   - [Book: The Functional Approach to Programming (1998)]_
+     influenced these glossary terms:
+
+     - polymorphism
+     - type variables.
+
+  

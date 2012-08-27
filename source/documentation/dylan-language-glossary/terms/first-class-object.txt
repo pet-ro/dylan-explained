@@ -5,16 +5,16 @@
   write 0 whitespaces in front of the label
   write 2 whitespaces infront of description.
 
-_dylan-term-first-class-citizien:
+.. _dylan-term-first-class-citizien:
 
-_dylan-term-first-class-object:
+.. _dylan-term-first-class-object:
 
 
 first-class object / first-class citizien
----_--------------------------------------
+------------------------------------------
 
 
-_dylan-term-first-class-object(first-class-questions):
+.. _dylan-term-first-class-object(first-class-questions):
 
   An entity for which all of the following three questions are possible
   is called a **first-class citizen** of that language. 
@@ -39,12 +39,12 @@ _dylan-term-first-class-object(first-class-questions):
   - *Object* is more implemention oriented
   - *Citizien* is more language oriented
 
-_dylan-term-first-class-object(guide-to-subordinates):
+.. _dylan-term-first-class-object(guide-to-subordinates):
 
   Examples of first-class citiziens in language
  
   - :ref:`functions
-    <dylan-term-function>  
+    <dylan-term-function>`  
     as first-class citiziens of the language
 
     - Functions can take a function as argument.
@@ -52,7 +52,7 @@ _dylan-term-first-class-object(guide-to-subordinates):
     - The dylan language supports them
 
   - :ref:`generic-functions
-    <dylan-term--generic-function>  
+    <dylan-term--generic-function>`  
     as first-class citiziens of the language
  
    
@@ -76,7 +76,7 @@ _dylan-term-first-class-object(guide-to-subordinates):
 
   -  *first-class* is a computer science term that describes
      programming language entities that have no restriction on their use
-     (see :re:`first-class questions above
+     (see :ref:`first-class questions above
      <dylan-term-first-class-object(first-class-questions)>`).
   -  *higher-order* describes a mathematical concept of functions
      that operate on other functions, while

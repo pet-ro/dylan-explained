@@ -1,0 +1,53 @@
+.. About this file
+  - contains one (!) glossary entry in the ReSTructed format  
+  - the glossary entry will be fetched by a `include` 
+    directive of Sphinx.
+  write 0 whitespaces in front of the label
+  write 2 whitespaces infront of description.
+
+.. _language-term-type-variables             :
+
+type variables
+--------------
+
+
+  Some languages allow to introduce new types and use type variables
+
+     
+    - Haskell, for example
+     
+      :samp:`data BinTree a = Empty | Node a (BinTree a) (BinTree a)
+
+      This Haskell code introduces a new type :samp:`BinTree` for 
+      binary trees. A :samp:`BinTree` is either :samp:`Empty` or
+      a :samp:`Node` consisting of an elemeent and two subtrees.
+      
+      :samp:`Empty` and :samp:`Node` are data constructors: they
+      build data structures of the type :samp:`BinTree`.
+
+      In the definition :samp:`a` is a *type variable* and stands
+      for an arbitrary type, the type of elements contained in the
+      tree.
+
+      :samp:`BinTree Integer` is then the type of binary trees of 
+      integers. Notice how in a :samp:`Node` the element and the 
+      elements in subtrees are restricted to have the same type.
+
+      We can write a :samp:`size` function that returns the number
+      of elements in a binary tree as follows::
+  
+         size :: BinTree a  ->  Integer
+         size Empty  =  0
+         size (Node val lt rt)  = 1 + (size lt) + (size rt)
+
+      The first line, the type signature of size, can be read as
+
+      -  For all types :samp:`a`, :samp:`size` takes an
+         argument of type :samp:`BinTree a` and returns an
+         :samp`Integer`.
+
+      Since :samp:`size` works on trees containing any type of element
+      it is called *polymorphic* function.
+
+
+
