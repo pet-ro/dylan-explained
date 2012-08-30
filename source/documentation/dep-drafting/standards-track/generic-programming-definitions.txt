@@ -1,10 +1,8 @@
 ..  DEP is short for Dylan Enhancement Proposal
 
-..  DEP Format and Templates
+..  DEP Format and validation
        
-    DEPs must be written in ReStructuredText_ format.  This allows for
-    rich markup that is still quite easy to read, but results in much
-    better-looking and more functional HTML.
+    DEPs must be written in ReStructuredText_ format. 
 
     The DEP author must verify that the ReStructuredText_ parses correctly.
     For example::
@@ -14,13 +12,11 @@
     cp your-dep.rst source/proposals/dep-1234.rst
     make html
 
-    Fix any errors that are displayed.
+    Fix any errors that are displayed
 
 
 
-
-
-
+.. _dep-generic-programming:
 
 ..  DEP Title
 ======================================================
@@ -30,67 +26,7 @@ Generic Progamming definitions: Concept and Model
  
 
 ..  DEP Preamble
-    Preamble -- RFC 822 style headers containing meta-data about the
-    DEP.
-    Headers marked with "*" are optional and all other headers are required.
-  
-       DEP-Number: <DEP number>
-       Author: <list of authors' real names and optionally, email addresses>
-       Status: <Draft | Active | Accepted | Deferred | Rejected |
-               Withdrawn | Final | Superseded>
-       Type: <Standards Track | Informational | Process>
-       Affects-DRM: <Yes | No>
-       Created: <date created>
-       Last-Modified: <date last modified>
-       Post-History: <date(s) of postings to hackers list>
-     * Resolution: <url>
-     * Target-Version: <OD version number>
-     * Requires: <DEP number(s)>
-     * Replaces: <DEP number(s)>
-     * Superseded-By: <DEP number>
 
-   Set the ``DEP-Number`` header to "Unassigned" until just before 
-   the DEP is committed to git.
-
-   Specify the type of the DEP of in the preamble
-  
-   - A *informational* DEP
-     provides information to the Dylan community, 
-    
-   - A *standards track* DEP
-     describes a new feature for the Dylan language 
-     or its standard libraries
-    
-   - A *process* DEP
-     describes changes to the processes or environment surrounding
-     the Dylan language or Open Dylan.
-
-   Specify the authors like in these two examples
-     Random J. User <address@dom.ain>
-     Random J. User
-   If there are multiple authors, each should be on a separate line
-   following RFC 2822 continuation line conventions.
-
-   To specify the ``` Status`` header as draft as long as
-   the DEP is actively discuss as DEP.
-
-   Specify ``Affects-DRM`` with ``yes`` or ``no``. The value
-   should be **Yes** if the DEP proposes a change to the Dylan language
-   specification, and otherwise **No**.  The language specification is 
-   composed of the Dylan Reference Manual plus any **Accepted** DEPs 
-   for which this field is **Yes**.  If this field is set to **Yes** 
-   then the DEP *must* clearly list exactly how it affects the language 
-   specification.
-
-   All dates must be in dd-mm-yyyy format (e.g., 14-Jan-2012).  A list 
-   of date values must use a comma as separator.
-
-   Specify Superseded-By and Replaces when necessary:
-   A DEPs may also have a Superseded-By header indicating that they have
-   been rendered obsolete by a later document; the value is the number of  
-   the DEP that replaces the current document.  The newer DEP must have a
-   Replaces header containing the number of the DEP that it rendered
-   obsolete.
 
 ==============  =============================================
 DEP Number:     unassigned
@@ -109,23 +45,24 @@ Auxilary-File:  <dep-XXXX-a-name.ext>
 
 
 ..  DEP Table of Content
+
 .. contents: Contents
    :local:
 
 
 ..  DEP Abstract
-    Abstract -- a short (~200 word) description of the technical issue
-    being addressed.
 
 Abstract
 =========
 
-**provide an abstract** 
+
+The [Article: A Language for Generic Programming in the Large (2007)]_ 
+states a list of requirements for a language to 
+support generic programming. We will check here what we like to see
+to be adopted to the dylan language.
+
 
 ..  DEP Copyright
-    Copyright/public domain -- Each DEP must either be explicitly
-    labelled as placed in the public domain (see this DEP as an
-    example) or licensed under the `Open Publication License`_.
 
 Copyright
 =========
@@ -134,60 +71,125 @@ Copyright
 
 
 ..  DEP Specification
-    Specification -- The technical specification should describe the
-    syntax and semantics of any new language or library feature.  The
-    specification should be detailed enough to allow competing,
-    interoperable Dylan implementations.  If the DEP proposes changes
-    to the language itself it *must* clearly indicate all such changes.
 
 Specification
 =============
 
-**provide a specification** 
+The list of requirements for a language to support generic programming 
+as state in [Article: A Language for Generic Programming in the Large (2007)]_.
+
+- The language provides type parameterized functions with the ability 
+  to express constraints on the type parameters. The definitions of 
+  parameterized functions are type checked independently of how 
+  they are instantiated.
 
 
+
+- The language provides a mechanism, such as *concepts*, for naming and 
+  grouping requirements on types, and a mechanism for composing concepts 
+  (refinement).
+
+- Type requirements include:
+  - requirements for functions and parameterized functions
+  - associated types
+  - requirements on associated types
+  - same-type constraints
+
+- The language provides an implicit mechanism for providing 
+  type-specific operations to a generic function, but this mechanism 
+  should maintain modularity (in contrast to argument dependent lookup in C++).
+
+- The language implicitly instantiates generic functions when they are used.
+
+- The language provides a mechanism for concept-based dispatching between 
+  algorithms.
+
+- The language provides function expressions and function parameters.
+
+- The language supports conditional modeling.
  
 ..  DEP Motivation
-    Motivation -- The motivation is critical for DEPs that want to
-    change the Dylan language.  It should clearly explain why the
-    existing language specification is inadequate to address the
-    problem that the DEP solves.
 
 Motivation
 ==========
 
-**provide a motivation** 
+
 
 ..  DEP Rational
-    Rationale -- The rationale fleshes out the specification by
-    describing what motivated the design and why particular design
-    decisions were made.  It should describe alternate designs that
-    were considered and related work, e.g. how the feature is supported
-    in other languages.
-
-    The rationale should provide evidence of consensus within the
-    community and discuss important objections or concerns raised
-    during discussion.
 
 Rational
 ========
+The goal:
 
-** provide a rational **
+  "That is the fundamental point: algorithms are
+  defined on algebraic structures."
+
+  - Alexander Stepanov 
+   
+    - see also: [Concept definitions from Elements of Programming
+      <http://www.elementsofprogramming.com/eop-concepts.pdf>], 
+      which summarizes the concept definition detailed in
+      [Book: Elements of Programming (2009)
+      <http://www.elementsofprogramming.com/book.html>]
+      
+
+  "My working definition of generic programming is *programming with concepts*,
+  where a concept is defined as a family of abstractions that are all related 
+  by a common set of requirements."
+
+  - [David R. Musser @ www.cs.rpi.edu <http://www.cs.rpi.edu/~musser/gp/>]
+    - see also Musser's work on 
+      [Formal Specification of STL Container and Iterator Concepts @ www.cs.rpi.edu
+      <http://www.cs.rpi.edu//~musser/gp/formal.html>]
+
+   "The signature of an algorithm gives the necessary carries
+   and operators, the adjectives of an algorithm gives 
+   minimal conditions under which the algorithm works correctly
+
+   - Christoph Schwarzweller
+   
+     - see also:
+      
+       - [Habilitation thesis: Towards Formal Support for Generic Programming (2003)
+         <http://delta.math.univ.gda.pl/~schwarzw/papers/habil.pdf>]
+    
+       - together with David Musser and S. Schupp: [The Tecton Concept Library (1999)
+         <http://delta.math.univ.gda.pl/~schwarzw/papers/tecalg.pdf>]
+
+
+  "Using generic programming concepts to define algebraic structures creates
+  a symbios between generic programming and algebra"
+
+  - Peter Goldschling
+   
+    see also [Fundamental Algebraic Concepts in Concept-Enables C++ ("006)
+    <http://www.cs.indiana.edu/pub/techreports/TR638.pdf>]
+
+
+These are relevant topics:
+
+- :ref:`generic programming - model passing @ programming language glossary
+  <language-term-generic-programming-model-passing>`
+
+- :ref:`generic programming - model passing @ the language G
+  <language-term-generic-programming-the-language-G>`
+
+- What is a test field for generic programming?
+   
+  - G uses Boost Graphic Library
+ 
+
 
 
 ..  DEP Use Case Example
-    Example  -- that demonstrates the new language feature in use
 
 Example
 =======
 
 ** provide an example **
 
+
 ..  DEP Backwards Compatibility
-    Backwards Compatibility -- All DEPs that introduce backwards
-    incompatibilities must include a section describing these
-    incompatibilities and their severity.  The DEP must explain how the
-    author proposes to deal with these incompatibilities.
 
 Backwards Compatibility
 =======================
@@ -211,6 +213,99 @@ Backwards Compatibility
 Terminology
 ===========
 
+_dep-generic-programming(gp-terminology):
+
+Generic Programming Terminology
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+based on [Habilitation thesis: Towards Formal Support for Generic Programming (2003)].
+
+_dep-generic-programming(gp-term-generalized-algorithm):
+
+Generic Programming
+     Generic programming is a  discinpline of computer science that aims 
+     at developing methods to write and organize algorithms that are broadly 
+     adaptable and interoperable, this allowing a maximum of reuse. 
+     Compared with ordinary algorithms generic algorithms are more abstract. 
+     Generic algorithm can be considered as algorithm schemes. 
+     Generic algorithm should work for every instantiation, that is 
+     for every  completion of the scheme. This means a great part of 
+     program code can be reused for different types. The identification of 
+     these generic parts leads to the expression of algorithms with minimal 
+     assumption about the data abstractions: generic programming deals with 
+     finding abstract representations of algorithms with respect to minimal 
+     requirements that make such an algorithm work. Therefore generic 
+     programming is also called *requirement oriented programming*. 
+     Requirements for generic algorithms have to be carefully identified 
+     so that the efficiency of a method is kept. Requirements have to be 
+     represented in order to make clear for which class of specialization 
+     a generic algorithm is suited.
+
+
+
+Generalized algorithm
+    A generalized algorithm  supports to  abstract from details and 
+    allows to plug in different data structures, representation 
+    or even algorithms.
+ 
+    What can be plugged in is not completely arbitrary. For example, 
+    sorting algorithms expect that the elements of a sequence can be compared. 
+    The  code plugged in must come with a number of properties so that the 
+    resulting algorithm works properly. This leads to the requirement 
+    that their must be a notation for these properties which both side, 
+    algorithm and plug-in can trust on. The Tecton, a Generic Programming
+    Methodology, introduces *concept* as an entity which bundles together
+    coherent sets of requirements. In Tecton *model* are data types that
+    implement the concepts.
+ 
+
+
+_dep-generic-programming(gp-term-formal-support-for-gp):
+
+Formal Support for Generic Programming
+    - has to
+
+      - prove that if an instance come with the properties required
+        by teh generic algorithm, the resulting instance meets the
+        algorithm's specification.
+   
+      - handle the questions: 
+     
+        -  what requirements are necessary in order that a generic algorithm 
+           works correctly for a class of instantiations 
+        and 
+   
+        -  how this can be expresed in formal manner.
+
+    and
+
+    - should
+
+      - support to check whether a generic algorithm is
+        applicable in a particular situation 
+    
+      and, the other way around,
+
+      - inform the user if a generic algorithm is not applicable.
+
+
+Tecton
+   Exact representation of requirements are necessary for
+   :ref:`generalized algorithm
+   <dep-generic-programming(gp-term-generalized-algorithm)>`.
+   Tecton provides such an exact representation. Tecton is
+   a description language for concepts. In Tecton classes of
+   algebras represent exact requirements and are called 
+   concepts*. 
+   
+   Tecton's concept desription language allows to heavily
+   reuse already existing concept descriptions.
+
+
+_dep-generic-programming(common-dylan-terminology):
+
+Common Dylan Terminology
+^^^^^^^^^^^^^^^^^^^^^^^^
 Dylan Reference Manual (DRM)
     The manual written by Andrew Shalit, plus its errata.
 
@@ -232,11 +327,26 @@ Standard libraries
 
 
 
+
 References and Footnotes
 ========================
 
-.. [1] *A Language for Generic Programming in the Large* (2007)
-   authored by Jeremy G. Siek (Deptartment of Electrical 
+.. [Habilitation thesis: Towards Formal Support for Generic Programming (2003)]
+   *Towards Formal Support for Generic Programming* (2003) authored by
+   Christoph Schwarzweller. Habilitation thesis, Informatik, 
+   Eberhard-Karls-University, u'Tübingen', Germany, 2003-Jan. 
+   [online accessed 2012-08-29 <http://delta.math.univ.gda.pl/~schwarzw/papers/habil.pdf>]
+    
+
+.. [Paper: The Tecton Concept Description Language (1998)]  *The
+   Tecton Concept Description Language* (1998)
+   authored by David R. Musser (Rensselaer Polytechnic Institute
+   Troy, New York). Published at 
+
+
+.. [Article: A Language for Generic Programming in the Large (2007)]  
+   *A Language for Generic Programming in the Large* (2007)
+   authored by Jeremy G. Siek (Department of Electrical 
    and Computer Engineering, University of Colorado at Boulder, USA)  
    and  
    Andrew Lumsdaine(Computer Science Department, Indiana University, USA).
@@ -244,7 +354,21 @@ References and Footnotes
    in the rubrik cs.PL.
 .. _[DEP-Link: arXiv:0708.2255v1]: http://arxiv.org/abs/0708.2255v1
 
-.. [2] 
+.. [2] *The C++0x Concept Effort* (2010). Slides authored by
+   Jeremy G. Siek (Department of Electrical 
+   and Computer Engineering, University of Colorado at Boulder, USA).
+   Published at SSGIP2010. [Online<Slides: The C++0x Concept Effort (2010)>]_
+   at www.docstoc.com, 
+   [PDF of slides <Slides (PDF): The C++0x Concept Effort (2010)>]_ at www.arxiv.org.
+.. _[Slides: The C++0x Concept Effort (2010)]: http://www.docstoc.com/docs/76031207/The-Concept-Effort
+.. _[Slides (PDF): The C++0x Concept Effort (2010)]: http://arxiv.org/pdf/1201.0027.pdf
+
+
+.. [3] *Groups Lecture 1* (2011) 
+   authored by Prof. O P Dogra ().
+   Published by [www.mathematicsoncommand.com 
+   <Groups Lecture 1 @ www.mathematicsoncommand.com>]_
+.. _[Groups Lecture 1 @ www.mathematicsoncommand.com]: http://www.mathematicsondemand.com/wp-content/uploads/2011/06/Groups-Lect-1.pdf
 
 
 .. _Open Publication License: http://www.opencontent.org/openpub/
@@ -262,78 +386,4 @@ This document has been placed in the public domain.
 
 
 
-
-..  DEP Author Responsibilities & Workflow
-
-
-    A DEP author must subscribe to the <hackers@opendylan.org> list.  
-    Before submitting a (new revision of a DEP) the author must do the
-    following:
-
-    * Read the DEP to check if it is ready: sound and complete.  The ideas
-      must make technical sense, even if they don't seem likely to be
-      accepted.
-
-    * The title should accurately describe the content.
-
-    * Edit the DEP for language (spelling, grammar, sentence structure,
-      etc.), markup, and code style.
-
-    Once the DEP is ready for the repository, the DEP author will:
-
-    * Assign the next available DEP number.
-
-    * List the DEP in the DEP index (in two places: the categorized list,
-      and the numeric list).
-
-    * Add the DEP to Git.  All DEPs live in `the website repository
-      <https://github.com/dylan-lang/website>`_.  The command to check
-      it out is::
-
-        git clone git@github.com:dylan-lang/website.git
-
-    Commit your changes, push them to your fork of the repository and
-    submit a pull request.
-
-    * Monitor `opendylan.org <http://opendylan.org>`_ to make sure the DEP
-      gets added to the site properly.
-
-    Resources:
-
-    * See the section `For Open Dylan Developers
-       <http://opendylan.org/documentation/index.html>`_ on the opendylan.org
-      documentation page.
-
-    .. It would be nice to have equivalents for some of these:
-
-    * `How Dylan is Developed <http://www.python.org/dev/intro/>`_
-
-    * `Dylan's Development Process <http://www.python.org/dev/process/>`_
-
-    * `Why Develop Dylan? <http://www.python.org/dev/why/>`_
-
-    * `Development Tools <http://www.python.org/dev/tools/>`_
-
-    * `Frequently Asked Questions for Developers
-      <http://www.python.org/dev/faq/>`_
-
-
-
-
-
-..  Reporting DEP Bugs, or Submitting DEP Updates
-
-    How you report a bug, or submit a DEP update depends on several
-    factors, such as the maturity of the DEP, the preferences of the DEP
-    author, and the nature of your comments.  For the early draft stages
-    of the DEP, it's probably best to send your comments and changes
-    directly to the DEP author.  For more mature, or finished DEPs you may
-    want to submit corrections to the Dylan issue tracker [2]_ so that your
-    changes don't get lost.  Assign the bug/patch to the DEP author.
-
-    When in doubt about where to send your changes, please check first
-    with the DEP author.
-
-    DEP authors who are also Dylan committers can update the DEPs
-    themselves committing them to Git and pushing to the main repository.
 

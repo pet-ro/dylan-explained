@@ -20,3 +20,18 @@ Book: The Functional Approach to Programming (1998)
      - type variables.
 
   
+Doctoral Dissertation: A Language for Generic Programming (2005)
+-----------------------------------------------------------------
+   
+   - [Doctoral Dissertation: A Language for Generic Programming (2005)]_
+     influenced these glossary terms:
+
+     - generic programming
+
+Doctoral Thesis Defense Slides: A Language for Generic Programming (2005)
+------------------------------------------------------------------------------
+
+   - [Doctoral Thesis Defense Slides: A Language for Generic Programming (2005)]_
+     influenced these glossary terms:
+
+     - conformance

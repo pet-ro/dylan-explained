@@ -41,9 +41,16 @@
  References Compiler Glossary          
 *********************************
 
+.. toctree::
+ 
+
+   ./bib/programming-language-related-references
+
+   ./bib/compiler-related-references
+
+   ./bib/dylanwork-related-references
 
 
-.. include:: ./terms/compiler-related-references.txt
 
 
 

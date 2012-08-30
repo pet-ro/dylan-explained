@@ -4,14 +4,23 @@
 
 .. _chapter-dylan-enhancement-proposal-drafts:
 
-
 ************************************
-DEP-Drafts of type: Standards Track         
+DEP Drafts
 ************************************
 
 
 
-.. include:: ./standards-track/a-dep-standards-track-template.txt
+
+
+============================================
+DEP-Drafts of type: Standards Track Drafts
+============================================
+
+.. toctree::
+ 
+
+   ./standard-track/generic-programming-definitions.rst
+
 
 ************************************
 DEP-Drafts of type: informational         

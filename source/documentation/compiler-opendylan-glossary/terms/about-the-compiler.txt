@@ -32,7 +32,7 @@ the compiler
   its main contributor Harlequin. 
   
   This naming convention is also used in a Diploma Thesis related to
-  OpenDylan: [Diploma Thesis Mehnert (2009)]_
+  OpenDylan: [Diploma thesis Mehnert (2009)]_
   
 
   Check for correctness:

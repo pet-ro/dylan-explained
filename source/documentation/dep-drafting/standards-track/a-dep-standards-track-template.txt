@@ -17,19 +17,14 @@
     Fix any errors that are displayed.
 
 
-
-
-
-
-
 ..  DEP Title
-======================================================
-Generic language feature: Concept and model definition
-======================================================
 
- 
+======================================================
+The DEP Title
+======================================================
 
 ..  DEP Preamble
+
     Preamble -- RFC 822 style headers containing meta-data about the
     DEP.
     Headers marked with "*" are optional and all other headers are required.
@@ -49,66 +44,71 @@ Generic language feature: Concept and model definition
      * Replaces: <DEP number(s)>
      * Superseded-By: <DEP number>
 
-   Set the ``DEP-Number`` header to "Unassigned" until just before 
-   the DEP is committed to git.
+    Set the ``DEP-Number`` header to "Unassigned" until just before 
+    the DEP is committed to git.
 
-   Specify the type of the DEP of in the preamble
+    Specify the type of the DEP of in the preamble
   
-   - A *informational* DEP
-     provides information to the Dylan community, 
+    - A *informational* DEP
+      provides information to the Dylan community, 
     
-   - A *standards track* DEP
-     describes a new feature for the Dylan language 
-     or its standard libraries
+    - A *standards track* DEP
+      describes a new feature for the Dylan language 
+      or its standard libraries
     
    - A *process* DEP
      describes changes to the processes or environment surrounding
      the Dylan language or Open Dylan.
 
-   Specify the authors like in these two examples
-     Random J. User <address@dom.ain>
-     Random J. User
-   If there are multiple authors, each should be on a separate line
-   following RFC 2822 continuation line conventions.
+    Specify the authors like in these two examples
+      Random J. User <address@dom.ain>
+      Random J. User
+    If there are multiple authors, each should be on a separate line
+    following RFC 2822 continuation line conventions.
 
-   To specify the ``` Status`` header as draft as long as
-   the DEP is actively discuss as DEP.
+    To specify the ``` Status`` header as draft as long as
+    the DEP is actively discuss as DEP.
 
-   Specify ``Affects-DRM`` with ``yes`` or ``no``. The value
-   should be **Yes** if the DEP proposes a change to the Dylan language
-   specification, and otherwise **No**.  The language specification is 
-   composed of the Dylan Reference Manual plus any **Accepted** DEPs 
-   for which this field is **Yes**.  If this field is set to **Yes** 
-   then the DEP *must* clearly list exactly how it affects the language 
-   specification.
+    Specify ``Affects-DRM`` with ``yes`` or ``no``. The value
+    should be **Yes** if the DEP proposes a change to the Dylan language
+    specification, and otherwise **No**.  The language specification
+    composed of the Dylan Reference Manual plus any **Accepted** DEPs 
+    for which this field is **Yes**.  If this field is set to **Yes** 
+    then the DEP *must* clearly list exactly how it affects the language 
+    specification.
 
-   All dates must be in dd-mm-yyyy format (e.g., 14-Jan-2012).  A list 
-   of date values must use a comma as separator.
+    All dates must be in dd-mm-yyyy format (e.g., 14-Jan-2012).  A list 
+    of date values must use a comma as separator.
 
-   Specify Superseded-By and Replaces when necessary:
-   A DEPs may also have a Superseded-By header indicating that they have
-   been rendered obsolete by a later document; the value is the number of  
-   the DEP that replaces the current document.  The newer DEP must have a
-   Replaces header containing the number of the DEP that it rendered
-   obsolete.
+    Specify Superseded-By and Replaces when necessary:
+    A DEPs may also have a Superseded-By header indicating that they have
+    been rendered obsolete by a later document; the value is the number of  
+    the DEP that replaces the current document.  The newer DEP must have a
+    Replaces header containing the number of the DEP that it render    
 
-==============  =============================================
-DEP Number:     unassigned
-Type:           Standards Track
-Author:         Peter Robisch <pet-ro@odendylan.org>
-Status:         Draft
-Affects-DRM:    Yes
-Created:        <first dep number assignment date>
-Last-Modified:  <last modified date>
-Post-History:   <oldest post date>, <newest post date>
-Resolution:     <url pointing to the pronouncement of the dep>
-Target-Version: <indicate the OD release version of the DP>
-Requires:       <DEP-number-(s)-required-by-this-DEP>
-Auxilary-File:  <dep-XXXX-a-name.ext>
-==============  =============================================
+
+===============  ==============================================
+
+Header property   value description
+   
+===============  ==============================================
+DEP Number:      unassigned
+Type:            Standards Track
+Author:          Peter Robisch <pet-ro@odendylan.org>
+Status:          Draft
+Affects-DRM:     Yes
+Created:         <first dep number assignment date>
+Last-Modified:   <last modified date>
+Post-History:    <oldest post date>, <newest post date>
+Resolution:      <url pointing to the pronouncement of the dep>
+Target-Version:  <indicate the OD release version of the DP>
+Requires:        <DEP-number-(s)-required-by-this-DEP>
+Auxilary-File:   <dep-XXXX-a-name.ext>
+===============  ==============================================
 
 
 ..  DEP Table of Content
+
 .. contents: Contents
    :local:
 

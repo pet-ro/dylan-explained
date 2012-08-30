@@ -65,8 +65,10 @@ Note:
 .. include:: ./terms/about-the-compiler-licence.txt
 
 
+.. toctree::
 
-.. include:: ../references/bib/dylanwork-related-references.txt
+      ../references/bib/dylanwork-related-references
+   
 
 
 
