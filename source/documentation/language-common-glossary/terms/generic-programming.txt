@@ -1,0 +1,58 @@
+.. About this file
+  - contains one (!) glossary entry in the ReSTructed format  
+  - the glossary entry will be fetched by a `include` 
+    directive of Sphinx.
+  write 0 whitespaces in front of the label
+  write 2 whitespaces infront of description.
+
+.. _language-term-generic-programming:
+
+
+generic programming
+-------------------
+
+  The discipline of generic programming is an effective approach
+  to design and implementation of large-scale software libraries.
+
+.. _language-term-generic-programming(main-idea):
+
+  The main idea behind *generic programming* is the separation of
+  algorithms from datastructures via abstractions. For example,
+  instead of writing functions on arrays we write generic functions
+  implemented in terms of abstract interators. The iterator 
+  abstraction can be implemented in terms of arrays, linked-lists,
+  and many other data-structures that represent sequences of 
+  elements.
+
+.. _language-term-generic-programming(no-wide-language-integration):
+
+  Note many programming languages specification integrate a
+  generic programming specification which integrate with the 
+  type system and the features of the programming language.
+
+.. _language-term-generic-programming(modularity):
+
+  The design of a generic programming specification has to
+  emphasize modularity because generic programming is inherently
+  about composing separately developed components
+
+.. _language-term-generic-programming(design-space-of-generics):
+
+  The design space of a generic programming specification
+   
+  - Parametric polymorphism vs. macro-like templates
+
+    - eg. ML polymorphic functions vs. C++ function templates
+    - Chameleon
+    - Lizard farm
+
+ 
+.. _language-term-generic-programming(term-use):
+
+  The term *generic programming* is often used to mean any use of
+  *generics*, i.e., any use if parameteric polymorphism or 
+  templates. The term is also used in the functional programming
+  community for function generation based on *algebraic datatypes*,
+  i.e, *polytypic programming*.
+
+  

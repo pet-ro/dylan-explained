@@ -44,11 +44,11 @@
 .. toctree::
  
 
-   ./bib/programming-language-related-references
+   ./bib/language-common-references
 
-   ./bib/compiler-related-references
+   ./bib/compiler-common-references
 
-   ./bib/dylanwork-related-references
+   ./bib/compiler-opendylan-references
 
 
 

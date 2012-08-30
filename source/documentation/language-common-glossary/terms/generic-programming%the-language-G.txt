@@ -1,0 +1,170 @@
+.. About this file
+  - contains one (!) glossary entry in the ReSTructed format  
+  - the glossary entry will be fetched by a `include` 
+    directive of Sphinx.
+  write 0 whitespaces in front of the label
+  write 2 whitespaces infront of description.
+
+.. _language-term-generic-programming-the-language-G:
+
+
+generic programming, the language G
+-----------------------------------
+
+Abstract
+^^^^^^^^
+
+- Generic programming is done by means of lifting, concepts and models
+- Concepts can be used to specify the requirements of generic algorithm
+- These requirements can be checked at compile time using concecpt checks
+- Further more archetypes that exactly conform to the concepts can be used
+  to check the coverage of the algorithm
+- Concept checking is being incorporated into modern compilers
+- A complete inplementation is available in the [Boost Concepts(2008)]_ library
+
+Three primary tasks
+^^^^^^^^^^^^^^^^^^^^
+
+ - Categorise the abstractions in a domain into concepts
+ - Implement generic algorithms based on these concepts
+ - Build concrete models of the concepts
+
+
+The primary tasks applied
+^^^^^^^^^^^^^^^^^^^^^^^^^
+ 
+ - Algorithm support summation of numeric values, concatenation of strings, etc.
+ - Currently our algorithm only works for arrays of various types.
+ - What about containers, such as std::vector?
+
+
+concepts and models
+^^^^^^^^^^^^^^^^^^^^
+
+ - concept
+ 
+   A *concept* describes a set of requirements that a template parameter must
+   meet for the template function or the class template to compile and operate
+   properly
+
+   - Concepts describe a family of related abstractions based on what these 
+     abstractions can do.
+
+   - Concepts are discovered through the process of lifting.
+     
+     - e.g. *iterator* concept describing abstraction for iterators
+     - e.g. a *shape* describes abstractions for shapes (polygon, circle)
+
+   
+
+ - model
+    
+   - Models of a concept are abstraction fullfilling these requirements, 
+     typically data types or set of data types.
+
+   - The set of models for a given concept is neither fixed nor known,
+     but open for future models. 
+
+     - Therefore is generic programming based on concepts and models an
+       ideal candidate to design rfeusable libraries.
+     
+     - When a data type is created we do not need to know all concepts
+       that it will model
+
+     - We can model a new concept without changing the data type, as long as
+       the concept does not require member functions but relies on free 
+       fucntions and traits
+
+The language G
+^^^^^^^^^^^^^^
+  The generic programming specification language G
+  provides these language features:
+
+  - concepts
+      
+    - Detailed
+    
+      - Nested requirements
+         - our requirements are redunant
+    
+    - Syntax::
+      
+       decl ::== concept cid<tyvar, ...>{ cmem...};  // concept definition
+       cmem ::== funsig                              // Function requirement
+                 fundef                              //  " with default implementation
+                 type tyvar;                         // Associated type
+                 type == type;                       // Same-type requirement
+                 refines cid<type, ... >;            // Refinement
+                 require cid<type, ... >;            // Nested requirement
+    
+    - Example::
+
+       concept Semigroup<T> {
+         refines Regular<T>;
+         fun binary_op(T, T -> T@
+       }; 
+       concept Monoid<T> {
+         refines Semigroup<T>;
+         fun identity_elt() -> T@
+       }
+
+ 
+  - models
+    
+    - Syntax::
+    
+       decl       ::== model polyhdr <type, ... >{ decl ... };     // model definition
+       polyhdr    ::== [ <tyvar, ... > ][where {constraint, ... }] // polymorphic header
+       constraint ::== cid <type, ... >                            // model constraint
+                       type == type                                // same-type constraint
+                       funsig                                      // function constraint
+
+    - Example::
+
+       model Semigroup<int> {
+         fun binary_op(int x, int y) -> int@
+             { return x + y }
+       }   
+       model Monoid<int> {
+         fun identity_elt -> int@
+             { return 0 }
+       }
+     
+    -  Parameterized models
+  Concepts, models and where clauses are *type safe*
+
+  Other language features
+  - generic functions and classes
+  - implicit instantiation and model passing
+  - function overloading (automatic dispatching)
+
+
+  
+Comparison with Haskell
+^^^^^^^^^^^^^^^^^^^^^^^^
+- Similarities
+  
+  - *concept* similar to  *type class*
+  - *model*   similar to  *instance*
+  - *where* clause similar to *context*
+
+- Differences
+ 
+  - Haskell does Hinley Milner type interference
+  - Scoping of concept operations and models
+  - G has assoc. types and same-type constraints
+  - G has function overloading
+
+
+  
+References
+^^^^^^^^^^
+- [Doctoral Thesis Defense Slides: A Language for Generic Programming (2005)]_
+- *Generic Programming Chapter (engl.)* in 
+  [Objektorientiertes Programmieren im Wissenschaftlichen Rechnen (2010)]_
+
+.. external links
+.. _[Boost Concepts(2008) @ www.boost.org]: http://www.boost.org/doc/libs/1_35_0/libs/concept_check/ 
+.. _[Objektorientiertes Programmieren im Wissenschaftlichen Rechnen (2010)]: http://conan.iwr.uni-heidelberg.de/teaching/ooprogram_ss2010/oop_skript.pdf
+
+

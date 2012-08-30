@@ -1,0 +1,32 @@
+.. About this file
+  - contains one (!) glossary entry in the ReSTructed format  
+  - the glossary entry will be fetched by a `include` 
+    directive of Sphinx.
+  write 0 whitespaces in front of the label
+  write 2 whitespaces infront of description.
+
+.. _language-term-generic-programming-model-passing:
+
+
+generic programming, model passing
+----------------------------------
+
+  Explicit vs. implicit model passing
+
+_language-term-generic-programming-model-passing(explicit):
+
+  - Explicit model passing, e.g. ML functors ::
+
+
+     structure SumIntArray =
+        Accumulate( structure M = IntAddMonoid
+                    structure I = ArrayIter )
+     val  sum = SumIntArray.run first last
+
+_language-term-generic-programming-model-passing(implicit):
+
+  - Implicit model passing, e.g. Haskell type classes::
+
+     sum  =  accumulate first last
+
+  

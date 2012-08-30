@@ -42,5 +42,8 @@ Currently provided content
 .. toctree::
  
 
-   /documentation/dylan-language-glossary/dylan-glossary
+   /documentation/language-dylan-glossary/language-dylan-glossary
+   /documentation/compiler-common-glossary/compiler-common-glossary
+   /documentation/compiler-opendylan-glossary/compiler-opendylan-glossary
+   /documentation/dep-drafting/dep-drafting
 

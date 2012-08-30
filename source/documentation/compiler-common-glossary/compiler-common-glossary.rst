@@ -38,7 +38,7 @@
 .. _chapter-compiler-glossary:
 
 *********************************
-Compiler Glossary          
+Compiler Common Glossary          
 *********************************
 
 Note:

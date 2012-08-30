@@ -1,0 +1,34 @@
+.. About this file
+  - contains one (!) glossary entry in the ReSTructed format  
+  - the glossary entry will be fetched by a `include` 
+    directive of Sphinx.
+  write 0 whitespaces in front of the label
+  write 2 whitespaces infront of description.
+
+.. _language-term-conformance:
+
+
+conformance
+-----------
+
+  Nominal vs. structural conformance:
+  
+  - Nominal: name of the interface matters
+   
+    - e.g., inheritance in OO languages
+
+    - conformance is declared and explicit
+
+
+  - Structural: only the requirements matter
+
+    - e.g., record types, ML signatures
+  
+    - conformance is implicit
+
+
+  In the contenxt of :ref:`generic programming
+  <language-term-generic-programming> ::
+  
+    structural conformance + automatic dispatching = danger !!!
+
